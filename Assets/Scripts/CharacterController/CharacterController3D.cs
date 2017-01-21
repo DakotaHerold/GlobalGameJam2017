@@ -43,6 +43,7 @@ public class CharacterController3D : MonoBehaviour {
             moveDirection = Vector3.forward * (Input.GetAxis(verticalMovementAxis1) + Input.GetAxis(verticalMovementAxis2)); 
             moveDirection = transform.TransformDirection(moveDirection);
             moveDirection *= movementSpeed;
+            //Debug.Log("Moving");
 
             
         }

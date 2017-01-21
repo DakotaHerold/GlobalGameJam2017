@@ -12,17 +12,27 @@ public class PlayerAttack : MonoBehaviour {
     public bool comboEnd;
     public bool specialActive;
     bool isHit;
-	// Use this for initialization
-	void Start () {
+    public int playerNumber;
+
+    private string swingButton;
+    private string specialButton;
+    // Use this for initialization
+    void Start () {
+        /*
         combo = 0;
         specialCD = 0.0f;
         attackTimer = 0.0f;
         attackDelay = 0.5f;
-        attDamage = 3;
+        attDamage = 3;*/
         isAttacking = false;
         isHit = false;
         comboEnd = false;
         specialActive = false;
+        playerNumber = 0;
+
+        swingButton = "Swing" + playerNumber;
+        specialButton = "Special" + playerNumber;
+
     }
 	
 	// Update is called once per frame
@@ -43,8 +53,9 @@ public class PlayerAttack : MonoBehaviour {
     }
     void Attack()
     {
-        if (Input.GetKeyDown(KeyCode.Q) && comboEnd == false)
+        if ((Input.GetKeyDown(KeyCode.Q) || Input.GetButtonDown(swingButton)) && comboEnd == false)
         {
+            //Debug.Log("attack!");
             combo += 1;
             attackTimer = attackDelay;
             isAttacking = true;
@@ -69,7 +80,7 @@ public class PlayerAttack : MonoBehaviour {
     }
     void Special()
     {
-        if (Input.GetKeyDown(KeyCode.E) && specialCD <= 0.0f)
+        if ((Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown(specialButton)) && specialCD <= 0.0f)
         {
             specialActive = true;
             specialCD = 3.0f;

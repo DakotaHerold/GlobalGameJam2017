@@ -7,14 +7,18 @@ public class EnemyScript : MonoBehaviour {
     public float health;
     public float attDamage;
     public int tears;
+    public int contact;
     public bool isDead;
+    public Color currentColor;
 
     void Start()
     {
         health = 50;
         attDamage = 3;
         tears = 0;
+        contact = 0;
         isDead = false;
+        currentColor = GetComponent<Renderer>().material.color;
 
 
     }
@@ -43,6 +47,10 @@ public class EnemyScript : MonoBehaviour {
         {
             
         }
+    }
+    public Color GetCurrentColor()
+    {
+        return currentColor;
     }
     void OnTriggerEnter(Collider other)
     {

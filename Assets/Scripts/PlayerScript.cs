@@ -7,6 +7,7 @@ public class PlayerScript : MonoBehaviour {
     // Use this for initialization
     public Transform stickSpawn;
     public GameObject StickPrefab;
+    public GameObject stickHold;
 
     public float health;
     public float healthGen;
@@ -19,19 +20,22 @@ public class PlayerScript : MonoBehaviour {
     public bool isDead;
     public bool hasWeapon;
     public bool isPinging;
-	void Start ()
+
+    public int playerNumber;
+    private string throwButton;
+    private string pingButton;
+    void Start ()
     {
         stickSpawn = transform.GetChild(0);
 
-        throwingSpeed = 3;
-        immunity = 0.0f;
-        tears = 0;
         regainHealth = false;
         isDead = false;
         hasWeapon = false;
         isPinging = false;
 
-
+        playerNumber = 0;
+        throwButton = "Throw" + playerNumber;
+        pingButton = "Ping" + playerNumber;
     }
 	
 	// Update is called once per frame
@@ -79,7 +83,7 @@ public class PlayerScript : MonoBehaviour {
     }
     void CheckIfPing()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if ((Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown(pingButton)) && hasWeapon == false)
         {
             Debug.Log("Is pinging");
         }
@@ -100,7 +104,7 @@ public class PlayerScript : MonoBehaviour {
     {
         if(hasWeapon == true)
         {
-            if (Input.GetKeyDown(KeyCode.C))
+            if (Input.GetKeyDown(KeyCode.C) || Input.GetButtonDown(throwButton))
             {
                 transform.GetChild(1).gameObject.SetActive(false);
                 GameObject stickClone = Instantiate(StickPrefab, stickSpawn.transform.position, stickSpawn.transform.rotation) as GameObject;

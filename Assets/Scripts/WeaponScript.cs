@@ -18,11 +18,22 @@ public class WeaponScript : MonoBehaviour {
         //Debug.Log("Parent " + this.transform.parent);
         if (other.gameObject.tag == "enemy")
         {
-            Debug.Log("Collision");
-            if (this.GetComponentInParent<PlayerAttack>().isAttacking == true)
+            if (this.GetComponentInParent<PlayerAttack>().combo ==  0)
+            {
+                other.GetComponent<EnemyScript>().contact = 0;
+                //other.GetComponent<Renderer>().material.color = other.GetComponent<EnemyScript>().GetCurrentColor();
+            }
+            //Debug.Log("Collision");
+            if (this.GetComponentInParent<PlayerAttack>().isAttacking == true && other.GetComponent<EnemyScript>().contact != this.GetComponentInParent<PlayerAttack>().combo)
             {
                 Debug.Log("Hit!");
+                other.GetComponent<Renderer>().material.color = Color.green;
                 other.GetComponent<EnemyScript>().TakeDamage(transform.parent.GetComponent<PlayerAttack>().attDamage);
+                other.GetComponent<EnemyScript>().contact = this.GetComponentInParent<PlayerAttack>().combo;
+            }
+            else
+            {
+                other.GetComponent<Renderer>().material.color = other.GetComponent<EnemyScript>().GetCurrentColor();
             }
         }
     }
