@@ -7,6 +7,7 @@ public class PlayerAttack : MonoBehaviour {
     public float specialCD;
     public float attackTimer;
     public float attackDelay;
+    public float attDamage;
     public bool isAttacking;
     public bool comboEnd;
     public bool specialActive;
@@ -17,6 +18,7 @@ public class PlayerAttack : MonoBehaviour {
         specialCD = 0.0f;
         attackTimer = 0.0f;
         attackDelay = 0.5f;
+        attDamage = 3;
         isAttacking = false;
         isHit = false;
         comboEnd = false;

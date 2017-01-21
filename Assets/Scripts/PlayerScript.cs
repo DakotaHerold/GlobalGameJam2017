@@ -12,7 +12,6 @@ public class PlayerScript : MonoBehaviour {
     public float healthGen;
     public float regenTimer;
     public float speed;
-    public float attDamage;
     public float throwingSpeed;
     public int tears;
     public bool regainHealth;
@@ -26,7 +25,6 @@ public class PlayerScript : MonoBehaviour {
         health = 100;
         healthGen = 5;
         regenTimer = 1.0f;
-        attDamage = 3;
         throwingSpeed = 3;
         tears = 0;
         regainHealth = false;
@@ -113,17 +111,18 @@ public class PlayerScript : MonoBehaviour {
     {
         if (other.gameObject.tag == "enemy")
         {
-
+            TakeDamage(other.GetComponent<EnemyScript>().attDamage);
         }
         if (other.gameObject.tag == "tear")
         {
-
+            tears += 1;
         }
         if(hasWeapon == false)
         {
             if (other.gameObject.tag == "stick")
             {
                 hasWeapon = true;
+                
                 transform.GetChild(1).gameObject.SetActive(true);
                 Destroy(other.gameObject);
             }

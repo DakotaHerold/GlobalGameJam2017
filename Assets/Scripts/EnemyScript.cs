@@ -44,4 +44,8 @@ public class EnemyScript : MonoBehaviour {
             
         }
     }
+    void OnTriggerEnter(Collider other)
+    {
+        
+    }
 }
