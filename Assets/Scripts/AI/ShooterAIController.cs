@@ -3,23 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class ShooterAIController : MonoBehaviour {
+public class ShooterAIController : EnemyScript {
 
-    public float speed = 1.0f;
-    public float angularSpeed = 0.0f;
     public float shootingSpeed = 10.0f; 
     public float shootingStartTime = 0.0f;
     public float shootingInterval = 5.0f; 
     public bool shooting = false;
 
-    public GameObject targetObject; 
     public GameObject projectile; 
 
     private NavMeshAgent agent;
 
     // Use this for initialization
-    void Start()
+    new void Start()
     {
+        base.Start(); 
         agent = GetComponent<NavMeshAgent>();
 
         agent.speed = speed;
@@ -32,16 +30,15 @@ public class ShooterAIController : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update()
+    new void Update()
     {
+        base.Update();
         //Debug.Log("Current Transform: " + transform.position + " Target Transform" + target.position); 
-        if (targetObject != null)
-        { 
-            if (!shooting)
-            {
-                agent.SetDestination(targetObject.transform.position);
-            }
+        if (!shooting)
+        {
+            agent.SetDestination(target.position);
         }
+        
         
     }
 
@@ -55,7 +52,7 @@ public class ShooterAIController : MonoBehaviour {
         GameObject bullet = Instantiate(projectile);
         Rigidbody bulletPhysics = bullet.GetComponent<Rigidbody>();
 
-        Vector3 targetVelocity = (targetObject.transform.position - transform.position).normalized * shootingSpeed;
+        Vector3 targetVelocity = (target.position - transform.position).normalized * shootingSpeed;
         targetVelocity.y = 0;
         bulletPhysics.velocity = targetVelocity; 
         shooting = false; 
@@ -63,6 +60,6 @@ public class ShooterAIController : MonoBehaviour {
 
     public void SetNewTarget(GameObject newTarget)
     {
-        targetObject = newTarget;
+        target = newTarget.transform;
     }
 }

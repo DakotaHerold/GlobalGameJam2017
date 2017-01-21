@@ -3,13 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class MeleeAIController : MonoBehaviour {
+public class MeleeAIController : EnemyScript {
 
-    public float speed = 1.0f;
-    public float angularSpeed = 0.0f;
-    public float damage;
     public float damageInterval;
-    public Transform target;
+    
 
     [HideInInspector]
     public bool attacking = false;
@@ -21,8 +18,9 @@ public class MeleeAIController : MonoBehaviour {
     private PlayerScript player; 
 
     // Use this for initialization
-    void Start()
+    new void Start()
     {
+        base.Start(); 
         agent = GetComponent<NavMeshAgent>();
 
         agent.speed = speed; 
@@ -33,8 +31,9 @@ public class MeleeAIController : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update()
+    new void Update()
     {
+        base.Update(); 
         // Add the time since Update was last called to the timer.
         damageTimer += Time.deltaTime;
 
