@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CharacterController3D : MonoBehaviour {
 
-    public float speed = 1.0f;
+    public float movementSpeed;
+    public float rotationSpeed;
     public float gravity = 9.8f;
     public int playerNumber = 0; 
 
@@ -12,7 +13,8 @@ public class CharacterController3D : MonoBehaviour {
     private CharacterController controller;
     private Vector3 moveDirection = Vector3.zero;
     private string horizontalMovementAxis;
-    private string verticalMovementAxis;
+    private string verticalMovementAxis1;
+    private string verticalMovementAxis2;
 
     public Vector3 GetCharacterVelocity()
     {
@@ -26,18 +28,26 @@ public class CharacterController3D : MonoBehaviour {
         //rigidBody = GetComponent<Rigidbody>();
 
         horizontalMovementAxis = "Horizontal" + playerNumber;
-        verticalMovementAxis = "Vertical" + playerNumber; 
+        verticalMovementAxis1 = "VerticalA" + playerNumber;
+        verticalMovementAxis2 = "VerticalB" + playerNumber;
  	}
 	
 	// Update is called once per frame
 	void Update () {
+
+        transform.Rotate(0, Input.GetAxis(horizontalMovementAxis) * rotationSpeed, 0);
+
         if (controller.isGrounded)
         {
-            moveDirection = new Vector3(Input.GetAxis(horizontalMovementAxis), 0, Input.GetAxis(verticalMovementAxis));
+            //moveDirection = new Vector3(Input.GetAxis(horizontalMovementAxis), 0, Input.GetAxis(verticalMovementAxis));
+            moveDirection = Vector3.forward * (Input.GetAxis(verticalMovementAxis1) + Input.GetAxis(verticalMovementAxis2)); 
             moveDirection = transform.TransformDirection(moveDirection);
-            moveDirection *= speed;
+            moveDirection *= movementSpeed;
+
+            
         }
         moveDirection.y -= gravity * Time.deltaTime;
         controller.Move(moveDirection * Time.deltaTime);
+       
     }
 }
