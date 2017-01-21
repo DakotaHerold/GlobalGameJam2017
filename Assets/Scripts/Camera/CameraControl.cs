@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections.Generic; 
 
 // Source credit https://unity3d.com/learn/tutorials/projects/tanks-tutorial/camera-control?playlist=20081
 
@@ -8,7 +9,7 @@ public class CameraControl : MonoBehaviour
     public float m_ScreenEdgeBuffer = 4f;           // Space between the top/bottom most target and the screen edge.
     public float m_MinSize = 6.5f;                  // The smallest orthographic size the camera can be.
     //[HideInInspector]
-    public Transform[] m_Targets; // All the targets the camera needs to encompass.
+    public List<Transform> cameraTargets; // All the targets the camera needs to encompass.
 
 
     private Camera m_Camera;                        // Used for referencing the camera.
@@ -49,14 +50,14 @@ public class CameraControl : MonoBehaviour
         int numTargets = 0;
 
         // Go through all the targets and add their positions together.
-        for (int i = 0; i < m_Targets.Length; i++)
+        for (int i = 0; i < cameraTargets.Count; i++)
         {
             // If the target isn't active, go on to the next one.
-            if (!m_Targets[i].gameObject.activeSelf)
+            if (!cameraTargets[i].gameObject.activeSelf)
                 continue;
 
             // Add to the average and increment the number of targets in the average.
-            averagePos += m_Targets[i].position;
+            averagePos += cameraTargets[i].position;
             numTargets++;
         }
 
@@ -89,14 +90,14 @@ public class CameraControl : MonoBehaviour
         float size = 0f;
 
         // Go through all the targets...
-        for (int i = 0; i < m_Targets.Length; i++)
+        for (int i = 0; i < cameraTargets.Count; i++)
         {
             // ... and if they aren't active continue on to the next target.
-            if (!m_Targets[i].gameObject.activeSelf)
+            if (!cameraTargets[i].gameObject.activeSelf)
                 continue;
 
             // Otherwise, find the position of the target in the camera's local space.
-            Vector3 targetLocalPos = transform.InverseTransformPoint(m_Targets[i].position);
+            Vector3 targetLocalPos = transform.InverseTransformPoint(cameraTargets[i].position);
 
             // Find the position of the target from the desired position of the camera's local space.
             Vector3 desiredPosToTarget = targetLocalPos - desiredLocalPos;

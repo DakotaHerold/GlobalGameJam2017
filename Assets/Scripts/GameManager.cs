@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
 
     // Attributes
+    public GameObject cameraObject; 
     public GameObject spawnContainer;
     public GameObject[] enemies; 
     public bool shouldSpawn = true;
@@ -13,30 +14,62 @@ public class GameManager : MonoBehaviour {
 
     private List<Transform> enemySpawnPoints = new List<Transform>();
     private List<Transform> spawnedEnemies = new List<Transform>(); 
-    private GameObject[] players;
+    private GameObject[] playersObjects;
+    private List<PlayerScript> players = new List<PlayerScript>(); 
     private PlayerScript stickPlayer; 
-    private float spawnTimer = 0.0f; 
+    private float spawnTimer = 0.0f;
+    private CameraControl cameraController; 
+
 	// Use this for initialization
 	void Start () {
-        players = GameObject.FindGameObjectsWithTag("player") as GameObject[];
 
-        for(int i = 0; i < spawnContainer.transform.childCount; i++)
+        cameraController = cameraObject.GetComponent<CameraControl>(); 
+
+        playersObjects = GameObject.FindGameObjectsWithTag("player") as GameObject[];
+
+        foreach(GameObject obj in playersObjects)
         {
-            enemySpawnPoints.Add(spawnContainer.transform.GetChild(i).GetComponent<Transform>()); 
+            PlayerScript player = obj.GetComponent<PlayerScript>(); 
+            if(player != null)
+            {
+                players.Add(player); 
+            }
         }
+        //Debug.Log("Player count : " + players.Count);
 
-        //foreach(Transform t in enemySpawnPoints)
-        //{
-        //    Debug.Log(t.position); 
-        //}
+
+        for (int i = 0; i < spawnContainer.transform.childCount; i++)
+        {
+            enemySpawnPoints.Add(spawnContainer.transform.GetChild(i).GetComponent<Transform>());
+        }
         
+
+        //foreach()
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        spawnTimer += Time.deltaTime; 
+        spawnTimer += Time.deltaTime;
 
-        if(spawnTimer > spawnInterval && shouldSpawn)
+        // Are any players left
+        if(players.Count < 1)
+        {
+            // TO-DO Game over logic here 
+            return; 
+        }
+        // Check if players died, if so remove them from the camera manager
+        foreach (PlayerScript player in players)
+        {
+            if (player.isDead)
+            {
+                cameraController.cameraTargets.Remove(player.gameObject.transform);
+
+                //Debug.Log("Player killed and removed from camera");
+            }
+        }
+
+        // Enemies ? 
+        if (spawnTimer > spawnInterval && shouldSpawn)
         {
             // instantiate enemies here 
             SpawnEnemies();
@@ -60,11 +93,11 @@ public class GameManager : MonoBehaviour {
             if(enemies[enemyTypeIndex].GetComponent<MeleeAIController>() != null)
             {
                 MeleeAIController meleeEnemy = enemies[enemyTypeIndex].GetComponent<MeleeAIController>();
-                meleeEnemy.target = players[0].transform; 
+                meleeEnemy.target = playersObjects[0].transform; 
             } else if (enemies[enemyTypeIndex].GetComponent<ShooterAIController>() != null)
             {
                 ShooterAIController shooterEnemey = enemies[enemyTypeIndex].GetComponent<ShooterAIController>();
-                shooterEnemey.targetObject = players[0];
+                shooterEnemey.targetObject = playersObjects[0];
             }
 
             Instantiate(enemies[enemyTypeIndex]); 
