@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour {
             }
 
             // Check if players died, if so remove them from the camera manager and destroy them 
-            if (players[i].isDead || players[i] == null)
+            if (players[i].isDead)
             {
                 cameraController.cameraTargets.Remove(players[i].gameObject.transform);
                 Debug.Log("Cam count: " + cameraController.cameraTargets.Count);
