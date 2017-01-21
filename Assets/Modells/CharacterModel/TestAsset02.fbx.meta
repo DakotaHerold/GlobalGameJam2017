@@ -1,0 +1,1280 @@
+fileFormatVersion: 2
+guid: 05b02ad7e8ed7ac479ce597d2318482b
+timeCreated: 1485031240
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: bind_Head
+    100002: bind_L_Ankle
+    100004: bind_L_Ball
+    100006: bind_L_Elbow
+    100008: bind_L_Eye_Lot
+    100010: bind_L_EyeScale
+    100012: bind_L_Hand
+    100014: bind_L_Hip
+    100016: bind_L_Index_1
+    100018: bind_L_Index_2
+    100020: bind_L_Knee
+    100022: bind_L_Little_1
+    100024: bind_L_Little_2
+    100026: bind_L_Middle_1
+    100028: bind_L_Middle_2
+    100030: bind_L_Shoulder
+    100032: bind_L_Thumb_
+    100034: bind_L_Thumb_1
+    100036: bind_L_Thumb_2
+    100038: bind_L_Toe
+    100040: bind_Neck
+    100042: bind_R_Ankle
+    100044: bind_R_Ball
+    100046: bind_R_Elbow
+    100048: bind_R_Eye_Rot
+    100050: bind_R_EyeScale
+    100052: bind_R_Hand
+    100054: bind_R_Hip
+    100056: bind_R_Index_1
+    100058: bind_R_Index_2
+    100060: bind_R_Knee
+    100062: bind_R_Middle_1
+    100064: bind_R_Middle_2
+    100066: bind_R_Rittle_1
+    100068: bind_R_Rittle_2
+    100070: bind_R_Shoulder
+    100072: bind_R_Thumb_
+    100074: bind_R_Thumb_1
+    100076: bind_R_Thumb_2
+    100078: bind_R_Toe
+    100080: bind_Root
+    100082: bind_Spine_1
+    100084: bind_Spine_2
+    100086: CTRL_Global
+    100088: CTRL_Hips
+    100090: CTRL_Root
+    100092: Four_Heads
+    100094: FourHeadsSkel
+    100096: group1
+    100098: group2
+    100100: group3
+    100102: group4
+    100104: group5
+    100106: group6
+    100108: joint1
+    100110: pCube10
+    100112: pCube11
+    100114: pCube12
+    100116: pCube14
+    100118: pCube16
+    100120: pCube17
+    100122: pCube19
+    100124: pCube20
+    100126: pCube21
+    100128: pCube22
+    100130: pCube23
+    100132: pCube24
+    100134: pCube25
+    100136: pCube26
+    100138: pCube27
+    100140: pCube28
+    100142: pCube29
+    100144: pCube30
+    100146: pCube31
+    100148: pCube6
+    100150: pCube9
+    100152: pCylinder1
+    100154: pCylinder2
+    100156: pSphere2
+    100158: pSphere3
+    100160: //RootNode
+    100162: ZG_Global
+    100164: ZG_Hips
+    100166: ZG_Root
+    400000: bind_Head
+    400002: bind_L_Ankle
+    400004: bind_L_Ball
+    400006: bind_L_Elbow
+    400008: bind_L_Eye_Lot
+    400010: bind_L_EyeScale
+    400012: bind_L_Hand
+    400014: bind_L_Hip
+    400016: bind_L_Index_1
+    400018: bind_L_Index_2
+    400020: bind_L_Knee
+    400022: bind_L_Little_1
+    400024: bind_L_Little_2
+    400026: bind_L_Middle_1
+    400028: bind_L_Middle_2
+    400030: bind_L_Shoulder
+    400032: bind_L_Thumb_
+    400034: bind_L_Thumb_1
+    400036: bind_L_Thumb_2
+    400038: bind_L_Toe
+    400040: bind_Neck
+    400042: bind_R_Ankle
+    400044: bind_R_Ball
+    400046: bind_R_Elbow
+    400048: bind_R_Eye_Rot
+    400050: bind_R_EyeScale
+    400052: bind_R_Hand
+    400054: bind_R_Hip
+    400056: bind_R_Index_1
+    400058: bind_R_Index_2
+    400060: bind_R_Knee
+    400062: bind_R_Middle_1
+    400064: bind_R_Middle_2
+    400066: bind_R_Rittle_1
+    400068: bind_R_Rittle_2
+    400070: bind_R_Shoulder
+    400072: bind_R_Thumb_
+    400074: bind_R_Thumb_1
+    400076: bind_R_Thumb_2
+    400078: bind_R_Toe
+    400080: bind_Root
+    400082: bind_Spine_1
+    400084: bind_Spine_2
+    400086: CTRL_Global
+    400088: CTRL_Hips
+    400090: CTRL_Root
+    400092: Four_Heads
+    400094: FourHeadsSkel
+    400096: group1
+    400098: group2
+    400100: group3
+    400102: group4
+    400104: group5
+    400106: group6
+    400108: joint1
+    400110: pCube10
+    400112: pCube11
+    400114: pCube12
+    400116: pCube14
+    400118: pCube16
+    400120: pCube17
+    400122: pCube19
+    400124: pCube20
+    400126: pCube21
+    400128: pCube22
+    400130: pCube23
+    400132: pCube24
+    400134: pCube25
+    400136: pCube26
+    400138: pCube27
+    400140: pCube28
+    400142: pCube29
+    400144: pCube30
+    400146: pCube31
+    400148: pCube6
+    400150: pCube9
+    400152: pCylinder1
+    400154: pCylinder2
+    400156: pSphere2
+    400158: pSphere3
+    400160: //RootNode
+    400162: ZG_Global
+    400164: ZG_Hips
+    400166: ZG_Root
+    4300000: pCube14
+    4300002: pCube17
+    4300004: pCube19
+    4300006: pCube31
+    4300008: pCube20
+    4300010: pCube21
+    4300012: pCube22
+    4300014: pCube23
+    4300016: pCube24
+    4300018: pCube26
+    4300020: pCube27
+    4300022: pCube28
+    4300024: pCube29
+    4300026: pCube30
+    4300028: pCube11
+    4300030: pCube12
+    4300032: pCube10
+    4300034: pCylinder2
+    4300036: pCube25
+    4300038: pCylinder1
+    4300040: pCube16
+    4300042: pCube6
+    4300044: pCube9
+    4300046: pSphere2
+    4300048: pSphere3
+    7400000: Idle
+    7400002: Run
+    7400004: Idle-Hammer
+    7400006: Run-Hammer
+    7400008: Attack
+    7400010: Run0
+    9500000: //RootNode
+    13700000: pCube10
+    13700002: pCube11
+    13700004: pCube12
+    13700006: pCube14
+    13700008: pCube16
+    13700010: pCube17
+    13700012: pCube19
+    13700014: pCube20
+    13700016: pCube21
+    13700018: pCube22
+    13700020: pCube23
+    13700022: pCube24
+    13700024: pCube25
+    13700026: pCube26
+    13700028: pCube27
+    13700030: pCube28
+    13700032: pCube29
+    13700034: pCube30
+    13700036: pCube31
+    13700038: pCube6
+    13700040: pCube9
+    13700042: pCylinder1
+    13700044: pCylinder2
+    13700046: pSphere2
+    13700048: pSphere3
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Idle
+      firstFrame: 1
+      lastFrame: 61
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Four_Heads
+        weight: 1
+      - path: Four_Heads/group1
+        weight: 1
+      - path: Four_Heads/group1/pCube20
+        weight: 1
+      - path: Four_Heads/group1/pCube21
+        weight: 1
+      - path: Four_Heads/group1/pCube22
+        weight: 1
+      - path: Four_Heads/group1/pCube23
+        weight: 1
+      - path: Four_Heads/group1/pCube24
+        weight: 1
+      - path: Four_Heads/group2
+        weight: 1
+      - path: Four_Heads/group2/pCube26
+        weight: 1
+      - path: Four_Heads/group2/pCube27
+        weight: 1
+      - path: Four_Heads/group2/pCube28
+        weight: 1
+      - path: Four_Heads/group2/pCube29
+        weight: 1
+      - path: Four_Heads/group2/pCube30
+        weight: 1
+      - path: Four_Heads/group3
+        weight: 1
+      - path: Four_Heads/group3/pCube10
+        weight: 1
+      - path: Four_Heads/group3/pCube11
+        weight: 1
+      - path: Four_Heads/group3/pCube12
+        weight: 1
+      - path: Four_Heads/group4
+        weight: 1
+      - path: Four_Heads/group4/pCube25
+        weight: 1
+      - path: Four_Heads/group4/pCylinder2
+        weight: 1
+      - path: Four_Heads/group5
+        weight: 1
+      - path: Four_Heads/group5/pCube16
+        weight: 1
+      - path: Four_Heads/group5/pCylinder1
+        weight: 1
+      - path: Four_Heads/group6
+        weight: 1
+      - path: Four_Heads/group6/pCube6
+        weight: 1
+      - path: Four_Heads/group6/pCube9
+        weight: 1
+      - path: Four_Heads/pCube14
+        weight: 1
+      - path: Four_Heads/pCube17
+        weight: 1
+      - path: Four_Heads/pCube19
+        weight: 1
+      - path: Four_Heads/pCube31
+        weight: 1
+      - path: Four_Heads/pSphere2
+        weight: 1
+      - path: Four_Heads/pSphere3
+        weight: 1
+      - path: FourHeadsSkel
+        weight: 1
+      - path: FourHeadsSkel/bind_Root
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_L_Hip
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_L_Hip/bind_L_Knee
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_L_Hip/bind_L_Knee/bind_L_Ankle
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_L_Hip/bind_L_Knee/bind_L_Ankle/bind_L_Ball
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_L_Hip/bind_L_Knee/bind_L_Ankle/bind_L_Ball/bind_L_Toe
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_R_Hip
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_R_Hip/bind_R_Knee
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_R_Hip/bind_R_Knee/bind_R_Ankle
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_R_Hip/bind_R_Knee/bind_R_Ankle/bind_R_Ball
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_R_Hip/bind_R_Knee/bind_R_Ankle/bind_R_Ball/bind_R_Toe
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Index_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Index_1/bind_L_Index_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Little_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Little_1/bind_L_Little_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Middle_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Middle_1/bind_L_Middle_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Thumb_
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Thumb_/bind_L_Thumb_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Thumb_/bind_L_Thumb_1/bind_L_Thumb_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_Neck
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_Neck/bind_Head
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_Neck/bind_Head/bind_L_EyeScale
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_Neck/bind_Head/bind_L_EyeScale/bind_L_Eye_Lot
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_Neck/bind_Head/bind_R_EyeScale
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_Neck/bind_Head/bind_R_EyeScale/bind_R_Eye_Rot
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Index_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Index_1/bind_R_Index_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Middle_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Middle_1/bind_R_Middle_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Rittle_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Rittle_1/bind_R_Rittle_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Thumb_
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Thumb_/bind_R_Thumb_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Thumb_/bind_R_Thumb_1/bind_R_Thumb_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/joint1
+        weight: 1
+      - path: ZG_Global
+        weight: 1
+      - path: ZG_Global/CTRL_Global
+        weight: 1
+      - path: ZG_Global/CTRL_Global/ZG_Root
+        weight: 1
+      - path: ZG_Global/CTRL_Global/ZG_Root/CTRL_Root
+        weight: 1
+      - path: ZG_Global/CTRL_Global/ZG_Root/CTRL_Root/ZG_Hips
+        weight: 1
+      - path: ZG_Global/CTRL_Global/ZG_Root/CTRL_Root/ZG_Hips/CTRL_Hips
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Run
+      takeName: Run
+      firstFrame: 80
+      lastFrame: 105
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Four_Heads
+        weight: 1
+      - path: Four_Heads/group1
+        weight: 1
+      - path: Four_Heads/group1/pCube20
+        weight: 1
+      - path: Four_Heads/group1/pCube21
+        weight: 1
+      - path: Four_Heads/group1/pCube22
+        weight: 1
+      - path: Four_Heads/group1/pCube23
+        weight: 1
+      - path: Four_Heads/group1/pCube24
+        weight: 1
+      - path: Four_Heads/group2
+        weight: 1
+      - path: Four_Heads/group2/pCube26
+        weight: 1
+      - path: Four_Heads/group2/pCube27
+        weight: 1
+      - path: Four_Heads/group2/pCube28
+        weight: 1
+      - path: Four_Heads/group2/pCube29
+        weight: 1
+      - path: Four_Heads/group2/pCube30
+        weight: 1
+      - path: Four_Heads/group3
+        weight: 1
+      - path: Four_Heads/group3/pCube10
+        weight: 1
+      - path: Four_Heads/group3/pCube11
+        weight: 1
+      - path: Four_Heads/group3/pCube12
+        weight: 1
+      - path: Four_Heads/group4
+        weight: 1
+      - path: Four_Heads/group4/pCube25
+        weight: 1
+      - path: Four_Heads/group4/pCylinder2
+        weight: 1
+      - path: Four_Heads/group5
+        weight: 1
+      - path: Four_Heads/group5/pCube16
+        weight: 1
+      - path: Four_Heads/group5/pCylinder1
+        weight: 1
+      - path: Four_Heads/group6
+        weight: 1
+      - path: Four_Heads/group6/pCube6
+        weight: 1
+      - path: Four_Heads/group6/pCube9
+        weight: 1
+      - path: Four_Heads/pCube14
+        weight: 1
+      - path: Four_Heads/pCube17
+        weight: 1
+      - path: Four_Heads/pCube19
+        weight: 1
+      - path: Four_Heads/pCube31
+        weight: 1
+      - path: Four_Heads/pSphere2
+        weight: 1
+      - path: Four_Heads/pSphere3
+        weight: 1
+      - path: FourHeadsSkel
+        weight: 1
+      - path: FourHeadsSkel/bind_Root
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_L_Hip
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_L_Hip/bind_L_Knee
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_L_Hip/bind_L_Knee/bind_L_Ankle
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_L_Hip/bind_L_Knee/bind_L_Ankle/bind_L_Ball
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_L_Hip/bind_L_Knee/bind_L_Ankle/bind_L_Ball/bind_L_Toe
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_R_Hip
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_R_Hip/bind_R_Knee
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_R_Hip/bind_R_Knee/bind_R_Ankle
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_R_Hip/bind_R_Knee/bind_R_Ankle/bind_R_Ball
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_R_Hip/bind_R_Knee/bind_R_Ankle/bind_R_Ball/bind_R_Toe
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Index_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Index_1/bind_L_Index_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Little_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Little_1/bind_L_Little_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Middle_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Middle_1/bind_L_Middle_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Thumb_
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Thumb_/bind_L_Thumb_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Thumb_/bind_L_Thumb_1/bind_L_Thumb_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_Neck
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_Neck/bind_Head
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_Neck/bind_Head/bind_L_EyeScale
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_Neck/bind_Head/bind_L_EyeScale/bind_L_Eye_Lot
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_Neck/bind_Head/bind_R_EyeScale
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_Neck/bind_Head/bind_R_EyeScale/bind_R_Eye_Rot
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Index_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Index_1/bind_R_Index_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Middle_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Middle_1/bind_R_Middle_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Rittle_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Rittle_1/bind_R_Rittle_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Thumb_
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Thumb_/bind_R_Thumb_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Thumb_/bind_R_Thumb_1/bind_R_Thumb_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/joint1
+        weight: 1
+      - path: ZG_Global
+        weight: 1
+      - path: ZG_Global/CTRL_Global
+        weight: 1
+      - path: ZG_Global/CTRL_Global/ZG_Root
+        weight: 1
+      - path: ZG_Global/CTRL_Global/ZG_Root/CTRL_Root
+        weight: 1
+      - path: ZG_Global/CTRL_Global/ZG_Root/CTRL_Root/ZG_Hips
+        weight: 1
+      - path: ZG_Global/CTRL_Global/ZG_Root/CTRL_Root/ZG_Hips/CTRL_Hips
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle-Hammer
+      takeName: Idle-Hammer
+      firstFrame: 121
+      lastFrame: 181
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Four_Heads
+        weight: 1
+      - path: Four_Heads/group1
+        weight: 1
+      - path: Four_Heads/group1/pCube20
+        weight: 1
+      - path: Four_Heads/group1/pCube21
+        weight: 1
+      - path: Four_Heads/group1/pCube22
+        weight: 1
+      - path: Four_Heads/group1/pCube23
+        weight: 1
+      - path: Four_Heads/group1/pCube24
+        weight: 1
+      - path: Four_Heads/group2
+        weight: 1
+      - path: Four_Heads/group2/pCube26
+        weight: 1
+      - path: Four_Heads/group2/pCube27
+        weight: 1
+      - path: Four_Heads/group2/pCube28
+        weight: 1
+      - path: Four_Heads/group2/pCube29
+        weight: 1
+      - path: Four_Heads/group2/pCube30
+        weight: 1
+      - path: Four_Heads/group3
+        weight: 1
+      - path: Four_Heads/group3/pCube10
+        weight: 1
+      - path: Four_Heads/group3/pCube11
+        weight: 1
+      - path: Four_Heads/group3/pCube12
+        weight: 1
+      - path: Four_Heads/group4
+        weight: 1
+      - path: Four_Heads/group4/pCube25
+        weight: 1
+      - path: Four_Heads/group4/pCylinder2
+        weight: 1
+      - path: Four_Heads/group5
+        weight: 1
+      - path: Four_Heads/group5/pCube16
+        weight: 1
+      - path: Four_Heads/group5/pCylinder1
+        weight: 1
+      - path: Four_Heads/group6
+        weight: 1
+      - path: Four_Heads/group6/pCube6
+        weight: 1
+      - path: Four_Heads/group6/pCube9
+        weight: 1
+      - path: Four_Heads/pCube14
+        weight: 1
+      - path: Four_Heads/pCube17
+        weight: 1
+      - path: Four_Heads/pCube19
+        weight: 1
+      - path: Four_Heads/pCube31
+        weight: 1
+      - path: Four_Heads/pSphere2
+        weight: 1
+      - path: Four_Heads/pSphere3
+        weight: 1
+      - path: FourHeadsSkel
+        weight: 1
+      - path: FourHeadsSkel/bind_Root
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_L_Hip
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_L_Hip/bind_L_Knee
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_L_Hip/bind_L_Knee/bind_L_Ankle
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_L_Hip/bind_L_Knee/bind_L_Ankle/bind_L_Ball
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_L_Hip/bind_L_Knee/bind_L_Ankle/bind_L_Ball/bind_L_Toe
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_R_Hip
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_R_Hip/bind_R_Knee
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_R_Hip/bind_R_Knee/bind_R_Ankle
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_R_Hip/bind_R_Knee/bind_R_Ankle/bind_R_Ball
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_R_Hip/bind_R_Knee/bind_R_Ankle/bind_R_Ball/bind_R_Toe
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Index_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Index_1/bind_L_Index_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Little_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Little_1/bind_L_Little_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Middle_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Middle_1/bind_L_Middle_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Thumb_
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Thumb_/bind_L_Thumb_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Thumb_/bind_L_Thumb_1/bind_L_Thumb_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_Neck
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_Neck/bind_Head
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_Neck/bind_Head/bind_L_EyeScale
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_Neck/bind_Head/bind_L_EyeScale/bind_L_Eye_Lot
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_Neck/bind_Head/bind_R_EyeScale
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_Neck/bind_Head/bind_R_EyeScale/bind_R_Eye_Rot
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Index_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Index_1/bind_R_Index_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Middle_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Middle_1/bind_R_Middle_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Rittle_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Rittle_1/bind_R_Rittle_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Thumb_
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Thumb_/bind_R_Thumb_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Thumb_/bind_R_Thumb_1/bind_R_Thumb_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/joint1
+        weight: 1
+      - path: ZG_Global
+        weight: 1
+      - path: ZG_Global/CTRL_Global
+        weight: 1
+      - path: ZG_Global/CTRL_Global/ZG_Root
+        weight: 1
+      - path: ZG_Global/CTRL_Global/ZG_Root/CTRL_Root
+        weight: 1
+      - path: ZG_Global/CTRL_Global/ZG_Root/CTRL_Root/ZG_Hips
+        weight: 1
+      - path: ZG_Global/CTRL_Global/ZG_Root/CTRL_Root/ZG_Hips/CTRL_Hips
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Run-Hammer
+      takeName: Run-Hammer
+      firstFrame: 200
+      lastFrame: 225
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Four_Heads
+        weight: 1
+      - path: Four_Heads/group1
+        weight: 1
+      - path: Four_Heads/group1/pCube20
+        weight: 1
+      - path: Four_Heads/group1/pCube21
+        weight: 1
+      - path: Four_Heads/group1/pCube22
+        weight: 1
+      - path: Four_Heads/group1/pCube23
+        weight: 1
+      - path: Four_Heads/group1/pCube24
+        weight: 1
+      - path: Four_Heads/group2
+        weight: 1
+      - path: Four_Heads/group2/pCube26
+        weight: 1
+      - path: Four_Heads/group2/pCube27
+        weight: 1
+      - path: Four_Heads/group2/pCube28
+        weight: 1
+      - path: Four_Heads/group2/pCube29
+        weight: 1
+      - path: Four_Heads/group2/pCube30
+        weight: 1
+      - path: Four_Heads/group3
+        weight: 1
+      - path: Four_Heads/group3/pCube10
+        weight: 1
+      - path: Four_Heads/group3/pCube11
+        weight: 1
+      - path: Four_Heads/group3/pCube12
+        weight: 1
+      - path: Four_Heads/group4
+        weight: 1
+      - path: Four_Heads/group4/pCube25
+        weight: 1
+      - path: Four_Heads/group4/pCylinder2
+        weight: 1
+      - path: Four_Heads/group5
+        weight: 1
+      - path: Four_Heads/group5/pCube16
+        weight: 1
+      - path: Four_Heads/group5/pCylinder1
+        weight: 1
+      - path: Four_Heads/group6
+        weight: 1
+      - path: Four_Heads/group6/pCube6
+        weight: 1
+      - path: Four_Heads/group6/pCube9
+        weight: 1
+      - path: Four_Heads/pCube14
+        weight: 1
+      - path: Four_Heads/pCube17
+        weight: 1
+      - path: Four_Heads/pCube19
+        weight: 1
+      - path: Four_Heads/pCube31
+        weight: 1
+      - path: Four_Heads/pSphere2
+        weight: 1
+      - path: Four_Heads/pSphere3
+        weight: 1
+      - path: FourHeadsSkel
+        weight: 1
+      - path: FourHeadsSkel/bind_Root
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_L_Hip
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_L_Hip/bind_L_Knee
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_L_Hip/bind_L_Knee/bind_L_Ankle
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_L_Hip/bind_L_Knee/bind_L_Ankle/bind_L_Ball
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_L_Hip/bind_L_Knee/bind_L_Ankle/bind_L_Ball/bind_L_Toe
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_R_Hip
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_R_Hip/bind_R_Knee
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_R_Hip/bind_R_Knee/bind_R_Ankle
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_R_Hip/bind_R_Knee/bind_R_Ankle/bind_R_Ball
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_R_Hip/bind_R_Knee/bind_R_Ankle/bind_R_Ball/bind_R_Toe
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Index_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Index_1/bind_L_Index_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Little_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Little_1/bind_L_Little_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Middle_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Middle_1/bind_L_Middle_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Thumb_
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Thumb_/bind_L_Thumb_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Thumb_/bind_L_Thumb_1/bind_L_Thumb_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_Neck
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_Neck/bind_Head
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_Neck/bind_Head/bind_L_EyeScale
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_Neck/bind_Head/bind_L_EyeScale/bind_L_Eye_Lot
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_Neck/bind_Head/bind_R_EyeScale
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_Neck/bind_Head/bind_R_EyeScale/bind_R_Eye_Rot
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Index_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Index_1/bind_R_Index_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Middle_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Middle_1/bind_R_Middle_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Rittle_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Rittle_1/bind_R_Rittle_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Thumb_
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Thumb_/bind_R_Thumb_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Thumb_/bind_R_Thumb_1/bind_R_Thumb_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/joint1
+        weight: 1
+      - path: ZG_Global
+        weight: 1
+      - path: ZG_Global/CTRL_Global
+        weight: 1
+      - path: ZG_Global/CTRL_Global/ZG_Root
+        weight: 1
+      - path: ZG_Global/CTRL_Global/ZG_Root/CTRL_Root
+        weight: 1
+      - path: ZG_Global/CTRL_Global/ZG_Root/CTRL_Root/ZG_Hips
+        weight: 1
+      - path: ZG_Global/CTRL_Global/ZG_Root/CTRL_Root/ZG_Hips/CTRL_Hips
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Attack
+      takeName: Attack
+      firstFrame: 235
+      lastFrame: 285
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Four_Heads
+        weight: 1
+      - path: Four_Heads/group1
+        weight: 1
+      - path: Four_Heads/group1/pCube20
+        weight: 1
+      - path: Four_Heads/group1/pCube21
+        weight: 1
+      - path: Four_Heads/group1/pCube22
+        weight: 1
+      - path: Four_Heads/group1/pCube23
+        weight: 1
+      - path: Four_Heads/group1/pCube24
+        weight: 1
+      - path: Four_Heads/group2
+        weight: 1
+      - path: Four_Heads/group2/pCube26
+        weight: 1
+      - path: Four_Heads/group2/pCube27
+        weight: 1
+      - path: Four_Heads/group2/pCube28
+        weight: 1
+      - path: Four_Heads/group2/pCube29
+        weight: 1
+      - path: Four_Heads/group2/pCube30
+        weight: 1
+      - path: Four_Heads/group3
+        weight: 1
+      - path: Four_Heads/group3/pCube10
+        weight: 1
+      - path: Four_Heads/group3/pCube11
+        weight: 1
+      - path: Four_Heads/group3/pCube12
+        weight: 1
+      - path: Four_Heads/group4
+        weight: 1
+      - path: Four_Heads/group4/pCube25
+        weight: 1
+      - path: Four_Heads/group4/pCylinder2
+        weight: 1
+      - path: Four_Heads/group5
+        weight: 1
+      - path: Four_Heads/group5/pCube16
+        weight: 1
+      - path: Four_Heads/group5/pCylinder1
+        weight: 1
+      - path: Four_Heads/group6
+        weight: 1
+      - path: Four_Heads/group6/pCube6
+        weight: 1
+      - path: Four_Heads/group6/pCube9
+        weight: 1
+      - path: Four_Heads/pCube14
+        weight: 1
+      - path: Four_Heads/pCube17
+        weight: 1
+      - path: Four_Heads/pCube19
+        weight: 1
+      - path: Four_Heads/pCube31
+        weight: 1
+      - path: Four_Heads/pSphere2
+        weight: 1
+      - path: Four_Heads/pSphere3
+        weight: 1
+      - path: FourHeadsSkel
+        weight: 1
+      - path: FourHeadsSkel/bind_Root
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_L_Hip
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_L_Hip/bind_L_Knee
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_L_Hip/bind_L_Knee/bind_L_Ankle
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_L_Hip/bind_L_Knee/bind_L_Ankle/bind_L_Ball
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_L_Hip/bind_L_Knee/bind_L_Ankle/bind_L_Ball/bind_L_Toe
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_R_Hip
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_R_Hip/bind_R_Knee
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_R_Hip/bind_R_Knee/bind_R_Ankle
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_R_Hip/bind_R_Knee/bind_R_Ankle/bind_R_Ball
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_R_Hip/bind_R_Knee/bind_R_Ankle/bind_R_Ball/bind_R_Toe
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Index_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Index_1/bind_L_Index_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Little_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Little_1/bind_L_Little_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Middle_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Middle_1/bind_L_Middle_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Thumb_
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Thumb_/bind_L_Thumb_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_L_Shoulder/bind_L_Elbow/bind_L_Hand/bind_L_Thumb_/bind_L_Thumb_1/bind_L_Thumb_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_Neck
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_Neck/bind_Head
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_Neck/bind_Head/bind_L_EyeScale
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_Neck/bind_Head/bind_L_EyeScale/bind_L_Eye_Lot
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_Neck/bind_Head/bind_R_EyeScale
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_Neck/bind_Head/bind_R_EyeScale/bind_R_Eye_Rot
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Index_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Index_1/bind_R_Index_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Middle_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Middle_1/bind_R_Middle_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Rittle_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Rittle_1/bind_R_Rittle_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Thumb_
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Thumb_/bind_R_Thumb_1
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/bind_R_Thumb_/bind_R_Thumb_1/bind_R_Thumb_2
+        weight: 1
+      - path: FourHeadsSkel/bind_Root/bind_Spine_1/bind_Spine_2/bind_R_Shoulder/bind_R_Elbow/bind_R_Hand/joint1
+        weight: 1
+      - path: ZG_Global
+        weight: 1
+      - path: ZG_Global/CTRL_Global
+        weight: 1
+      - path: ZG_Global/CTRL_Global/ZG_Root
+        weight: 1
+      - path: ZG_Global/CTRL_Global/ZG_Root/CTRL_Root
+        weight: 1
+      - path: ZG_Global/CTRL_Global/ZG_Root/CTRL_Root/ZG_Hips
+        weight: 1
+      - path: ZG_Global/CTRL_Global/ZG_Root/CTRL_Root/ZG_Hips/CTRL_Hips
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 10
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
