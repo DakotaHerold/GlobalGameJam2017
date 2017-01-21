@@ -44,8 +44,22 @@ public class PlayerAttack : MonoBehaviour {
         else
         {
             // Player doesn't have hammer
-
-            Special();    
+            // Special Check 
+            if (Input.GetButtonDown(specialButton) && specialCD <= 0.0f)
+            {
+                specialActive = true;
+                specialCD = 3.0f;
+                Special(); 
+            }
+            if (specialCD <= 0.0f)
+            {
+                specialCD = 0.0f;
+                specialActive = false;
+            }
+            else
+            {
+                specialCD -= 0.01f;
+            }
         }
         
 	}
@@ -84,22 +98,7 @@ public class PlayerAttack : MonoBehaviour {
     }
     void Special()
     {
-        // Special Check 
-        if (Input.GetButtonDown(specialButton) && specialCD <= 0.0f)
-        {
-            specialActive = true;
-            specialCD = 3.0f;
-            Debug.Log(playerNumber + " Special Logic!");
-        }
-        if (specialCD <= 0.0f)
-        {
-            specialCD = 0.0f;
-            specialActive = false;
-        }
-        else
-        {
-            specialCD -= 0.01f;
-        }
+        Debug.Log(playerNumber + " Special Logic!");
     }
 
 }
