@@ -8,7 +8,7 @@ public class CameraControl : MonoBehaviour
     public float m_DampTime = 0.2f;                 // Approximate time for the camera to refocus.
     public float m_ScreenEdgeBuffer = 4f;           // Space between the top/bottom most target and the screen edge.
     public float m_MinSize = 6.5f;                  // The smallest orthographic size the camera can be.
-    //[HideInInspector]
+    [HideInInspector]
     public List<Transform> cameraTargets; // All the targets the camera needs to encompass.
 
 
@@ -21,6 +21,16 @@ public class CameraControl : MonoBehaviour
     private void Awake()
     {
         m_Camera = GetComponentInChildren<Camera>();
+    }
+
+    // Set targets to all players 
+    void Start()
+    {
+        GameObject[] playersObjects = GameObject.FindGameObjectsWithTag("player") as GameObject[];
+        foreach(GameObject player in playersObjects)
+        {
+            cameraTargets.Add(player.transform);
+        }
     }
 
 
