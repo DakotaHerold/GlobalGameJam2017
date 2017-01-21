@@ -8,17 +8,22 @@ public class CharacterController3D : MonoBehaviour {
     public float gravity = 9.8f;
     public int playerNumber = 0; 
 
-    Rigidbody rigidBody;
-    CharacterController controller;
+    //Rigidbody rigidBody;
+    private CharacterController controller;
     private Vector3 moveDirection = Vector3.zero;
     private string horizontalMovementAxis;
     private string verticalMovementAxis;
+
+    public Vector3 GetCharacterVelocity()
+    {
+        return controller.velocity; 
+    }
 
 
     // Use this for initialization
     void Start () {
         controller = GetComponent<CharacterController>();
-        rigidBody = GetComponent<Rigidbody>();
+        //rigidBody = GetComponent<Rigidbody>();
 
         horizontalMovementAxis = "Horizontal" + playerNumber;
         verticalMovementAxis = "Vertical" + playerNumber; 
