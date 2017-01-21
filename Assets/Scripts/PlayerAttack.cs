@@ -12,38 +12,39 @@ public class PlayerAttack : MonoBehaviour {
     public bool comboEnd;
     public bool specialActive;
     bool isHit;
-    public int playerNumber;
 
+
+    private int playerNumber;
     private string swingButton;
     private string specialButton;
+    private PlayerScript playerScript; 
     // Use this for initialization
     void Start () {
-        /*
-        combo = 0;
-        specialCD = 0.0f;
-        attackTimer = 0.0f;
-        attackDelay = 0.5f;
-        attDamage = 3;*/
         isAttacking = false;
         isHit = false;
         comboEnd = false;
         specialActive = false;
-        playerNumber = 0;
+        playerNumber = GetComponent<CharacterController3D>().playerNumber; 
 
         swingButton = "Swing" + playerNumber;
         specialButton = "Special" + playerNumber;
 
+        playerScript = GetComponent<PlayerScript>(); 
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if (this.GetComponent<PlayerScript>().hasWeapon)
+        if (playerScript.hasWeapon)
         {
             Attack();
         }
+        else
+        {
+            // Player doesn't have hammer
 
-        Special();
-		
+            Special();    
+        }
+        
 	}
     IEnumerator ResetCombo()
     {
@@ -53,9 +54,9 @@ public class PlayerAttack : MonoBehaviour {
     }
     void Attack()
     {
-        if ((Input.GetKeyDown(KeyCode.Q) || Input.GetButtonDown(swingButton)) && comboEnd == false)
+        if ((Input.GetButtonDown(swingButton)) && comboEnd == false)
         {
-            //Debug.Log("attack!");
+            Debug.Log("attack!");
             combo += 1;
             attackTimer = attackDelay;
             isAttacking = true;
@@ -80,12 +81,13 @@ public class PlayerAttack : MonoBehaviour {
     }
     void Special()
     {
-        if ((Input.GetKeyDown(KeyCode.E) || Input.GetButtonDown(specialButton)) && specialCD <= 0.0f)
+        // Special Check 
+        if (Input.GetButtonDown(specialButton) && specialCD <= 0.0f)
         {
             specialActive = true;
             specialCD = 3.0f;
+            Debug.Log(playerNumber + " Special Logic!");
         }
-
         if (specialCD <= 0.0f)
         {
             specialCD = 0.0f;
@@ -95,7 +97,6 @@ public class PlayerAttack : MonoBehaviour {
         {
             specialCD -= 0.01f;
         }
-
     }
 
 }

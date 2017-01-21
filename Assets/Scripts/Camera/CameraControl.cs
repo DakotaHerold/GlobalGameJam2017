@@ -8,8 +8,8 @@ public class CameraControl : MonoBehaviour
     public float m_DampTime = 0.2f;                 // Approximate time for the camera to refocus.
     public float m_ScreenEdgeBuffer = 4f;           // Space between the top/bottom most target and the screen edge.
     public float m_MinSize = 6.5f;                  // The smallest orthographic size the camera can be.
-    [HideInInspector]
-    public List<Transform> cameraTargets; // All the targets the camera needs to encompass.
+    //[HideInInspector]
+    public List<Transform> cameraTargets = new List<Transform>(); // All the targets the camera needs to encompass.
 
 
     private Camera m_Camera;                        // Used for referencing the camera.
@@ -29,7 +29,7 @@ public class CameraControl : MonoBehaviour
         GameObject[] playersObjects = GameObject.FindGameObjectsWithTag("player") as GameObject[];
         foreach(GameObject player in playersObjects)
         {
-            //cameraTargets.Add(player.transform);
+            cameraTargets.Add(player.transform);
         }
     }
 
@@ -59,17 +59,22 @@ public class CameraControl : MonoBehaviour
         Vector3 averagePos = new Vector3();
         int numTargets = 0;
 
-        // Go through all the targets and add their positions together.
+       // Go through all the targets and add their positions together.
         for (int i = cameraTargets.Count - 1; i >= 0; i--)
         {
-            // If the target isn't active, go on to the next one.
+            // If the target isn't active, go on to the next one 
             if (!cameraTargets[i].gameObject.activeSelf)
+            {
                 continue;
+            }
+
 
             // Add to the average and increment the number of targets in the average.
             averagePos += cameraTargets[i].position;
             numTargets++;
         }
+        
+        
 
         // If there are targets divide the sum of the positions by the number of them to find the average.
         if (numTargets > 0)

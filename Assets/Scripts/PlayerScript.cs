@@ -21,7 +21,7 @@ public class PlayerScript : MonoBehaviour {
     public bool hasWeapon;
     public bool isPinging;
 
-    public int playerNumber;
+    private int playerNumber;
     private string throwButton;
     private string pingButton;
     void Start ()
@@ -32,6 +32,7 @@ public class PlayerScript : MonoBehaviour {
         isDead = false;
         hasWeapon = false;
         isPinging = false;
+        playerNumber = GetComponent<CharacterController3D>().playerNumber;
 
         playerNumber = 0;
         throwButton = "Throw" + playerNumber;

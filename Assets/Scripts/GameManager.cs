@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour {
         cameraController = cameraObject.GetComponent<CameraControl>(); 
 
         playersObjects = GameObject.FindGameObjectsWithTag("player") as GameObject[];
-
+   
         foreach(GameObject obj in playersObjects)
         {
             PlayerScript player = obj.GetComponent<PlayerScript>(); 
@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviour {
             }
 
             // Check if players died, if so remove them from the camera manager and destroy them 
-            if (players[i].isDead)
+            if (players[i].isDead || players[i] == null)
             {
                 cameraController.cameraTargets.Remove(players[i].gameObject.transform);
                 Debug.Log("Cam count: " + cameraController.cameraTargets.Count);
@@ -100,7 +100,8 @@ public class GameManager : MonoBehaviour {
             shouldSpawn = true; 
         }
 
-        Debug.Log("Num enemies: " + enemies.Count);
+        // FIX ME IM NOT DECREMENTING CORRECTLY 
+        //Debug.Log("Num enemies: " + enemies.Count);
 
         // Enemies 
         if (spawnTimer > spawnInterval && shouldSpawn)
