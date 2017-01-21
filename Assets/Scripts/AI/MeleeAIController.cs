@@ -68,8 +68,9 @@ public class MeleeAIController : MonoBehaviour {
 
         player = collidedObject.GetComponent<PlayerScript>();
         if (player != null)
-        {
+        { 
             attacking = false;
+            player = null; 
         }
     }
 
