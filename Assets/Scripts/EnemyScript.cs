@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyScript : MonoBehaviour {
 
@@ -17,12 +18,20 @@ public class EnemyScript : MonoBehaviour {
 
 
     private Color currentColor;
+    public NavMeshAgent agent;
 
     public virtual void Start()
     {
         //tears = 0;
         currentColor = GetComponent<Renderer>().material.color;
         isDead = false;
+        agent = GetComponent<NavMeshAgent>();
+
+        agent.speed = speed;
+        if (angularSpeed == 0.0f)
+        {
+            agent.angularSpeed = angularSpeed;
+        }
     }
 
     // Update is called once per frame
@@ -44,12 +53,11 @@ public class EnemyScript : MonoBehaviour {
     }
     public virtual void Death()
     {
-        // To do play death anim 
-        Debug.Log(gameObject.name + " died");
+        // TO DO play death anim 
+        agent = null; 
+        DestroyObject(transform.gameObject); 
     }
     
-
-
     // Getters 
     public Color GetCurrentColor()
     {

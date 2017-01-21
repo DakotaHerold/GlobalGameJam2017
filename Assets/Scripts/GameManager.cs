@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour {
 
     private List<EnemyScript> enemies = new List<EnemyScript>();
     private List<Transform> enemySpawnPoints = new List<Transform>();
+    private List<Transform> usedSpawnPoints = new List<Transform>(); 
     private List<Transform> spawnedEnemies = new List<Transform>(); 
     private GameObject[] playersObjects;
     private List<PlayerScript> players = new List<PlayerScript>(); 
@@ -72,13 +73,34 @@ public class GameManager : MonoBehaviour {
             {
                 cameraController.cameraTargets.Remove(players[i].gameObject.transform);
                 Debug.Log("Cam count: " + cameraController.cameraTargets.Count);
-                Destroy(players[i].gameObject); 
+                GameObject objToDestroy = players[i].gameObject;
                 players.RemoveAt(i);
             }
         }
         
 
         //Debug.Log("Camera targets: " + cameraController.cameraTargets.Count);
+        
+        // Check if all enemies have been killed 
+        for (int i = enemies.Count - 1; i >= 0; i--)
+        {
+            if(enemies[i].isDead)
+            {
+                GameObject objToDestroy = enemies[i].gameObject;
+                //enemies.RemoveAt(i); 
+            }
+        }
+
+        if(enemies.Count > 0)
+        {
+            shouldSpawn = false; 
+        }
+        else
+        {
+            shouldSpawn = true; 
+        }
+
+        Debug.Log("Num enemies: " + enemies.Count);
 
         // Enemies 
         if (spawnTimer > spawnInterval && shouldSpawn)
@@ -97,6 +119,17 @@ public class GameManager : MonoBehaviour {
 
     public void SpawnRandomEnemy()
     {
+        // Reset spawn points if all have been used 
+        if(enemySpawnPoints.Count < 1)
+        {
+            foreach(Transform point in usedSpawnPoints)
+            {
+                enemySpawnPoints.Add(point); 
+            }
+            usedSpawnPoints.Clear(); 
+        }
+
+
         // Get random point out of spawn points 
         int spawnPointIndex = Random.Range(0, enemySpawnPoints.Count);
 
@@ -128,8 +161,14 @@ public class GameManager : MonoBehaviour {
             enemyAI.SetClosestPlayerToTarget(); 
         }
 
-        
+        // Add enemy to enemies list 
+        enemies.Add(enemyAI); 
+        // Spawn 
         Instantiate(enemyObjectPrefabs[enemyTypeIndex]);
+
+        // Clean up 
+        usedSpawnPoints.Add(enemySpawnPoints[spawnPointIndex]);
+        enemySpawnPoints.RemoveAt(spawnPointIndex); 
         
     }
 

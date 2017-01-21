@@ -12,19 +12,12 @@ public class ShooterAIController : EnemyScript {
 
     public GameObject projectile; 
 
-    private NavMeshAgent agent;
+    
 
     // Use this for initialization
     new void Start()
     {
         base.Start(); 
-        agent = GetComponent<NavMeshAgent>();
-
-        agent.speed = speed;
-        if (angularSpeed == 0.0f)
-        {
-            agent.angularSpeed = angularSpeed;
-        }
 
         InvokeRepeating("LaunchProjectile", shootingInterval, shootingInterval); 
     }
@@ -34,12 +27,23 @@ public class ShooterAIController : EnemyScript {
     {
         base.Update();
         //Debug.Log("Current Transform: " + transform.position + " Target Transform" + target.position); 
+
+        if(agent == null)
+        {
+            return;
+        }
+
         if (!shooting)
         {
             agent.SetDestination(target.position);
         }
         
         
+    }
+
+    new void Death()
+    {
+        base.Death();
     }
 
     void LaunchProjectile()

@@ -13,7 +13,7 @@ public class MeleeAIController : EnemyScript {
 
     private float damageTimer = 0.0f; 
     private SphereCollider trigger; 
-    private NavMeshAgent agent;
+
     private Vector3 moveDirection = Vector3.zero;
     private PlayerScript player; 
 
@@ -21,13 +21,7 @@ public class MeleeAIController : EnemyScript {
     new void Start()
     {
         base.Start(); 
-        agent = GetComponent<NavMeshAgent>();
 
-        agent.speed = speed; 
-        if(angularSpeed == 0.0f)
-        {
-            agent.angularSpeed = angularSpeed; 
-        }
     }
 
     // Update is called once per frame
@@ -37,14 +31,25 @@ public class MeleeAIController : EnemyScript {
         // Add the time since Update was last called to the timer.
         damageTimer += Time.deltaTime;
 
-        // Search for player 
+        // Seek player if agent exists
+        if (agent == null)
+            return; 
+
         agent.SetDestination(target.position);
+        
+
+        
 
         if(damageTimer >= damageInterval && attacking == true)
         {
             DealDamage(); 
         }
         
+    }
+
+    new void Death()
+    {
+        base.Death(); 
     }
 
     // Trigger functions 
