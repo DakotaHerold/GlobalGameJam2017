@@ -41,7 +41,7 @@ public class PlayerScript : MonoBehaviour {
         {
             TakeDamage(50);
         }
-        HealthReGen();
+        //HealthReGen();
         CheckIfPing();	
 	}
     public void TakeDamage(float damg)

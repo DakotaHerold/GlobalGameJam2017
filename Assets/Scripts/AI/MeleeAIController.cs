@@ -7,14 +7,18 @@ public class MeleeAIController : MonoBehaviour {
 
     public float speed = 1.0f;
     public float angularSpeed = 0.0f;
-    public float damage = 2.0f;
-    public float damageInterval = 2.0f; 
+    public float damage;
+    public float damageInterval;
     public Transform target;
 
-    private bool attacking = false; 
+    [HideInInspector]
+    public bool attacking = false;
+
+    private float damageTimer = 0.0f; 
     private SphereCollider trigger; 
     private NavMeshAgent agent;
     private Vector3 moveDirection = Vector3.zero;
+    private PlayerScript player; 
 
     // Use this for initialization
     void Start()
@@ -31,7 +35,17 @@ public class MeleeAIController : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        // Add the time since Update was last called to the timer.
+        damageTimer += Time.deltaTime;
+
+        // Search for player 
         agent.SetDestination(target.position);
+
+        if(damageTimer >= damageInterval && attacking == true)
+        {
+            DealDamage(); 
+        }
+        
     }
 
     // Trigger functions 
@@ -39,38 +53,43 @@ public class MeleeAIController : MonoBehaviour {
     {
         GameObject collidedObject = other.gameObject;
 
-        PlayerScript playerScript = collidedObject.GetComponent<PlayerScript>();
-        DealDamage(playerScript); 
-    }
-
-    void OnTriggerStay(Collider other)
-    {
-        GameObject collidedObject = other.gameObject;
-
-        PlayerScript playerScript = collidedObject.GetComponent<PlayerScript>();
-        attacking = true; 
-        StartCoroutine(DealDamageRoutine(playerScript)); 
+        player = collidedObject.GetComponent<PlayerScript>();
+        if(player != null)
+        {
+            attacking = true;
+        }
+        
+        
     }
 
     void OnTriggerExit(Collider other)
     {
-        attacking = false; 
-    }
+        GameObject collidedObject = other.gameObject;
 
-    void DealDamage(PlayerScript player)
-    {
-        player.health -= damage;
-        Debug.Log(player.health); 
-    }
-
-    IEnumerator DealDamageRoutine(PlayerScript player)
-    {
-        while(attacking)
+        player = collidedObject.GetComponent<PlayerScript>();
+        if (player != null)
         {
-            DealDamage(player);
-            yield return new WaitForSeconds(damageInterval); 
+            attacking = false;
         }
     }
+
+    void DealDamage()
+    {
+        damageTimer = 0.0f;
+        // Asserts player is not null
+        player.TakeDamage(damage);
+        //Debug.Log("Player health:" + player.health);
+        
+    }
+
+    //IEnumerator DealDamageRoutine(PlayerScript player)
+    //{
+    //    while(attacking)
+    //    {
+    //        DealDamage(player);
+    //        yield return new WaitForSeconds(damageInterval); 
+    //    }
+    //}
 
 
 
