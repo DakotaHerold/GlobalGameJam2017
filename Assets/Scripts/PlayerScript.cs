@@ -5,25 +5,29 @@ using UnityEngine;
 public class PlayerScript : MonoBehaviour {
 
     // Use this for initialization
-    GameObject stick;
+    public Transform stickSpawn;
+    public GameObject StickPrefab;
 
     public float health;
     public float healthGen;
     public float regenTimer;
     public float speed;
     public float attDamage;
+    public float throwingSpeed;
     public int tears;
     public bool regainHealth;
     public bool isDead;
     public bool hasWeapon;
     public bool isPinging;
-	void Start () {
-        stick = null;
+	void Start ()
+    {
+        stickSpawn = transform.GetChild(0);
 
         health = 100;
         healthGen = 5;
         regenTimer = 1.0f;
         attDamage = 3;
+        throwingSpeed = 3;
         tears = 0;
         regainHealth = false;
         isDead = false;
@@ -42,7 +46,8 @@ public class PlayerScript : MonoBehaviour {
             TakeDamage(50);
         }
         HealthReGen();
-        CheckIfPing();	
+        CheckIfPing();
+        ThrowStick();
 	}
     public void TakeDamage(float damg)
     {
@@ -86,24 +91,42 @@ public class PlayerScript : MonoBehaviour {
     }
     void ThrowStick()
     {
-        if(stick != null)
+        if(hasWeapon == true)
         {
             if (Input.GetKeyDown(KeyCode.C))
             {
+                transform.GetChild(1).gameObject.SetActive(false);
+                GameObject stickClone = Instantiate(StickPrefab, stickSpawn.transform.position, stickSpawn.transform.rotation) as GameObject;
+                Rigidbody stickPhysics = stickClone.GetComponent<Rigidbody>(); // You should be able to hold to throw?
 
-                stick = null;
+                Vector3 targetVelocity = (transform.forward + transform.up).normalized * throwingSpeed;
+                stickPhysics.velocity = targetVelocity;
+                hasWeapon = false;
             }
+        }
+        else
+        {
+            transform.GetChild(1).gameObject.SetActive(false);
         }
     }
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "enemy")
+        if (other.gameObject.tag == "enemy")
         {
 
         }
         if (other.gameObject.tag == "tear")
         {
 
+        }
+        if(hasWeapon == false)
+        {
+            if (other.gameObject.tag == "stick")
+            {
+                hasWeapon = true;
+                transform.GetChild(1).gameObject.SetActive(true);
+                Destroy(other.gameObject);
+            }
         }
     }
 }
