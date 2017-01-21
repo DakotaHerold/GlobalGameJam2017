@@ -58,15 +58,21 @@ public class GameManager : MonoBehaviour {
             return; 
         }
         // Check if players died, if so remove them from the camera manager
-        foreach (PlayerScript player in players)
+        for(int i = players.Count - 1; i >= 0; i--)
         {
-            if (player.isDead)
+            if (players[i].isDead)
             {
-                cameraController.cameraTargets.Remove(player.gameObject.transform);
-
-                //Debug.Log("Player killed and removed from camera");
+                cameraController.cameraTargets.Remove(players[i].gameObject.transform);
+                Debug.Log("Cam count: " + cameraController.cameraTargets.Count);
+                Destroy(players[i].gameObject); 
+                players.RemoveAt(i);
             }
         }
+        
+
+        
+
+        //Debug.Log("Camera targets: " + cameraController.cameraTargets.Count);
 
         // Enemies ? 
         if (spawnTimer > spawnInterval && shouldSpawn)
@@ -84,24 +90,24 @@ public class GameManager : MonoBehaviour {
     {
         int spawnPointIndex = Random.Range(0, enemySpawnPoints.Count); 
 
-        for(int i = 0; i < numEnemies; i++)
-        {
-            int enemyTypeIndex = Random.Range(0, enemies.Length);
-            enemies[enemyTypeIndex].transform.position = enemySpawnPoints[spawnPointIndex].transform.position;
+        //for(int i = 0; i < numEnemies; i++)
+        //{
+        //    int enemyTypeIndex = Random.Range(0, enemies.Length);
+        //    enemies[enemyTypeIndex].transform.position = enemySpawnPoints[spawnPointIndex].transform.position;
 
 
-            if(enemies[enemyTypeIndex].GetComponent<MeleeAIController>() != null)
-            {
-                MeleeAIController meleeEnemy = enemies[enemyTypeIndex].GetComponent<MeleeAIController>();
-                meleeEnemy.target = playersObjects[0].transform; 
-            } else if (enemies[enemyTypeIndex].GetComponent<ShooterAIController>() != null)
-            {
-                ShooterAIController shooterEnemey = enemies[enemyTypeIndex].GetComponent<ShooterAIController>();
-                shooterEnemey.targetObject = playersObjects[0];
-            }
+        //    if(enemies[enemyTypeIndex].GetComponent<MeleeAIController>() != null)
+        //    {
+        //        MeleeAIController meleeEnemy = enemies[enemyTypeIndex].GetComponent<MeleeAIController>();
+        //        meleeEnemy.target = playersObjects[0].transform; 
+        //    } else if (enemies[enemyTypeIndex].GetComponent<ShooterAIController>() != null)
+        //    {
+        //        ShooterAIController shooterEnemey = enemies[enemyTypeIndex].GetComponent<ShooterAIController>();
+        //        shooterEnemey.targetObject = playersObjects[0];
+        //    }
 
-            Instantiate(enemies[enemyTypeIndex]); 
-        }
+        //    Instantiate(enemies[enemyTypeIndex]); 
+        //}
     }
 
 

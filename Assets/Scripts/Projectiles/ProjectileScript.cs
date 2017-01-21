@@ -22,6 +22,7 @@ public class ProjectileScript : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision)
     {
+        
         isAlive = false; 
     }
 

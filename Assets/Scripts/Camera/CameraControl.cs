@@ -29,7 +29,7 @@ public class CameraControl : MonoBehaviour
         GameObject[] playersObjects = GameObject.FindGameObjectsWithTag("player") as GameObject[];
         foreach(GameObject player in playersObjects)
         {
-            cameraTargets.Add(player.transform);
+            //cameraTargets.Add(player.transform);
         }
     }
 
@@ -60,7 +60,7 @@ public class CameraControl : MonoBehaviour
         int numTargets = 0;
 
         // Go through all the targets and add their positions together.
-        for (int i = 0; i < cameraTargets.Count; i++)
+        for (int i = cameraTargets.Count - 1; i >= 0; i--)
         {
             // If the target isn't active, go on to the next one.
             if (!cameraTargets[i].gameObject.activeSelf)
