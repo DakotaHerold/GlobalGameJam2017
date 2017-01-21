@@ -16,7 +16,7 @@ public class WeaponScript : MonoBehaviour {
     void OnTriggerStay(Collider other)
     {
         //Debug.Log("Parent " + this.transform.parent);
-        if (other.gameObject.tag == "enemy")
+        if (other.gameObject.tag == "enemy" && transform.parent != null)
         {
             if (this.GetComponentInParent<PlayerAttack>().combo ==  0)
             {

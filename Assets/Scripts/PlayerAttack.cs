@@ -13,6 +13,7 @@ public class PlayerAttack : MonoBehaviour {
     public bool specialActive;
     bool isHit;
 
+    Animator anim;
 
     private int playerNumber;
     private string swingButton;
@@ -28,6 +29,8 @@ public class PlayerAttack : MonoBehaviour {
 
         swingButton = "Swing" + playerNumber;
         specialButton = "Special" + playerNumber;
+
+        anim = GetComponent<Animator>();
 
         playerScript = GetComponent<PlayerScript>(); 
     }

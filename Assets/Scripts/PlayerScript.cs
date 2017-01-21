@@ -21,6 +21,8 @@ public class PlayerScript : MonoBehaviour {
     public bool hasWeapon;
     public bool isPinging;
 
+    Animator anim;
+
     private int playerNumber;
     private string throwButton;
     private string pingButton;
@@ -33,6 +35,8 @@ public class PlayerScript : MonoBehaviour {
         hasWeapon = false;
         isPinging = false;
         playerNumber = GetComponent<CharacterController3D>().playerNumber;
+
+        anim = GetComponent<Animator>();
 
         playerNumber = 0;
         throwButton = "Throw" + playerNumber;
@@ -107,7 +111,8 @@ public class PlayerScript : MonoBehaviour {
         {
             if (Input.GetKeyDown(KeyCode.C) || Input.GetButtonDown(throwButton))
             {
-                transform.GetChild(1).gameObject.SetActive(false);
+                stickHold.transform.GetChild(0).gameObject.SetActive(false);
+                anim.SetBool("HasWeapon", false);
                 GameObject stickClone = Instantiate(StickPrefab, stickSpawn.transform.position, stickSpawn.transform.rotation) as GameObject;
                 Rigidbody stickPhysics = stickClone.GetComponent<Rigidbody>(); // You should be able to hold to throw?
 
@@ -118,7 +123,7 @@ public class PlayerScript : MonoBehaviour {
         }
         else
         {
-            transform.GetChild(1).gameObject.SetActive(false);
+            stickHold.transform.GetChild(0).gameObject.SetActive(false);
         }
     }
     void OnTriggerEnter(Collider other)
@@ -136,8 +141,9 @@ public class PlayerScript : MonoBehaviour {
             if (other.gameObject.tag == "stick")
             {
                 hasWeapon = true;
-                
-                transform.GetChild(1).gameObject.SetActive(true);
+                anim.SetBool("HasWeapon", true);
+
+                stickHold.transform.GetChild(0).gameObject.SetActive(true);
                 Destroy(other.gameObject);
             }
         }

@@ -16,6 +16,8 @@ public class CharacterController3D : MonoBehaviour {
     private string verticalMovementAxis1;
     private string verticalMovementAxis2;
 
+    Animator anim;
+
     public Vector3 GetCharacterVelocity()
     {
         return controller.velocity; 
@@ -30,6 +32,8 @@ public class CharacterController3D : MonoBehaviour {
         horizontalMovementAxis = "Horizontal" + playerNumber;
         verticalMovementAxis1 = "VerticalA" + playerNumber;
         verticalMovementAxis2 = "VerticalB" + playerNumber;
+
+        anim = GetComponent<Animator>();
  	}
 	
 	// Update is called once per frame
@@ -44,8 +48,15 @@ public class CharacterController3D : MonoBehaviour {
             moveDirection = transform.TransformDirection(moveDirection);
             moveDirection *= movementSpeed;
             //Debug.Log("Moving");
-
             
+            if(moveDirection == Vector3.zero)
+            {
+                anim.SetBool("IsMoving",false);
+            }
+            else
+            {
+                anim.SetBool("IsMoving", true);
+            }   
         }
         moveDirection.y -= gravity * Time.deltaTime;
         controller.Move(moveDirection * Time.deltaTime);
