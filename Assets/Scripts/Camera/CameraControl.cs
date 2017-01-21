@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 
+// Source credit https://unity3d.com/learn/tutorials/projects/tanks-tutorial/camera-control?playlist=20081
+
 public class CameraControl : MonoBehaviour
 {
     public float m_DampTime = 0.2f;                 // Approximate time for the camera to refocus.
