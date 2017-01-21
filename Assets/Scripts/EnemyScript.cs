@@ -55,4 +55,31 @@ public class EnemyScript : MonoBehaviour {
     {
         return currentColor; 
     }
+
+    public void SetClosestPlayerToTarget()
+    {
+        GameObject[] playersObjects = GameObject.FindGameObjectsWithTag("player") as GameObject[];
+
+        GameObject closestPlayer = null;
+        float minDist = Mathf.Infinity;
+        foreach (GameObject player in playersObjects)
+        {
+            float currentDist = Vector3.Distance(player.transform.position, transform.position);
+            if (currentDist < minDist)
+            {
+                minDist = currentDist;
+                closestPlayer = player;
+            }
+        }
+
+        if(closestPlayer != null)
+        {
+            target = closestPlayer.transform; 
+        }
+        else
+        {
+            Debug.Log(gameObject.name + " couldn't find a closest player in scene!"); 
+        }
+        Debug.Log("Closest player set for " + gameObject.name);
+    }
 }

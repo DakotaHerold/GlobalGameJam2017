@@ -7,11 +7,12 @@ public class GameManager : MonoBehaviour {
     // Attributes
     public GameObject cameraObject; 
     public GameObject spawnContainer;
-    public GameObject[] enemies; 
+    public GameObject[] enemyObjectPrefabs; 
     public bool shouldSpawn = true;
     public float spawnInterval;
     public int numEnemies;
 
+    private List<EnemyScript> enemies = new List<EnemyScript>();
     private List<Transform> enemySpawnPoints = new List<Transform>();
     private List<Transform> spawnedEnemies = new List<Transform>(); 
     private GameObject[] playersObjects;
@@ -44,7 +45,7 @@ public class GameManager : MonoBehaviour {
         }
         
 
-        //foreach()
+        
 	}
 	
 	// Update is called once per frame
@@ -96,25 +97,39 @@ public class GameManager : MonoBehaviour {
 
     public void SpawnRandomEnemy()
     {
+        // Get random point out of spawn points 
         int spawnPointIndex = Random.Range(0, enemySpawnPoints.Count);
 
+        // Get random enemy from enemy types 
+        int enemyTypeIndex = Random.Range(0, enemyObjectPrefabs.Length);
+        // set enemy type position to spawn point 
+        enemyObjectPrefabs[enemyTypeIndex].transform.position = enemySpawnPoints[spawnPointIndex].transform.position;
 
-        int enemyTypeIndex = Random.Range(0, enemies.Length);
-        enemies[enemyTypeIndex].transform.position = enemySpawnPoints[spawnPointIndex].transform.position;
-
-
-        if (enemies[enemyTypeIndex].GetComponent<MeleeAIController>() != null)
+        EnemyScript enemyAI = enemyObjectPrefabs[enemyTypeIndex].GetComponent<EnemyScript>(); 
+        if(enemyAI == null)
         {
-            MeleeAIController meleeEnemy = enemies[enemyTypeIndex].GetComponent<MeleeAIController>();
-            meleeEnemy.target = playersObjects[0].transform;
+            Debug.Log("enemy prefab doesn't contain ai. cannot spawn");
+            return; 
         }
-        else if (enemies[enemyTypeIndex].GetComponent<ShooterAIController>() != null)
+        else if (enemyAI is MeleeAIController)
         {
-            ShooterAIController shooterEnemey = enemies[enemyTypeIndex].GetComponent<ShooterAIController>();
-            shooterEnemey.targetObject = playersObjects[0];
+            // Melee targets always go to stick player else closest player 
+            if(stickPlayer != null)
+            {
+                enemyAI.target = stickPlayer.transform; 
+            }
+            else
+            {
+                enemyAI.SetClosestPlayerToTarget(); 
+            }
+        }
+        else if (enemyAI is ShooterAIController)
+        {
+            enemyAI.SetClosestPlayerToTarget(); 
         }
 
-        Instantiate(enemies[enemyTypeIndex]);
+        
+        Instantiate(enemyObjectPrefabs[enemyTypeIndex]);
         
     }
 
