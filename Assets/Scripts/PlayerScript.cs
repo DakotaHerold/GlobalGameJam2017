@@ -13,6 +13,7 @@ public class PlayerScript : MonoBehaviour {
     public float regenTimer;
     public float speed;
     public float throwingSpeed;
+    public float immunity;
     public int tears;
     public bool regainHealth;
     public bool isDead;
@@ -26,6 +27,7 @@ public class PlayerScript : MonoBehaviour {
         healthGen = 5;
         regenTimer = 1.0f;
         throwingSpeed = 3;
+        immunity = 0.0f;
         tears = 0;
         regainHealth = false;
         isDead = false;
@@ -46,10 +48,20 @@ public class PlayerScript : MonoBehaviour {
         HealthReGen();
         CheckIfPing();
         ThrowStick();
+        if(immunity > 0.0f)
+        {
+            immunity -= 0.01f;
+        }
+
 	}
     public void TakeDamage(float damg)
     {
-        health -= damg;
+        if (immunity <= 0.0f)
+        {
+            health -= damg;
+            immunity = 0.5f;
+        }
+        
     }
     IEnumerator healthRegen()
     {
@@ -109,10 +121,10 @@ public class PlayerScript : MonoBehaviour {
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "enemy")
+        /*if (other.gameObject.tag == "enemy")
         {
             TakeDamage(other.GetComponent<EnemyScript>().attDamage);
-        }
+        }*/
         if (other.gameObject.tag == "tear")
         {
             tears += 1;
