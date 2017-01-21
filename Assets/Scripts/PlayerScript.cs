@@ -23,9 +23,6 @@ public class PlayerScript : MonoBehaviour {
     {
         stickSpawn = transform.GetChild(0);
 
-        health = 100;
-        healthGen = 5;
-        regenTimer = 1.0f;
         throwingSpeed = 3;
         immunity = 0.0f;
         tears = 0;

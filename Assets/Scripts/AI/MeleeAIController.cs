@@ -78,8 +78,7 @@ public class MeleeAIController : MonoBehaviour {
         damageTimer = 0.0f;
         // Asserts player is not null
         player.TakeDamage(damage);
-        //Debug.Log("Player health:" + player.health);
-        
+        Debug.Log("Player health:" + player.health);
     }
 
     //IEnumerator DealDamageRoutine(PlayerScript player)
