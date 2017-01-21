@@ -5,47 +5,38 @@ using UnityEngine;
 public class EnemyScript : MonoBehaviour {
 
     public float health;
-    public float attDamage;
+    public float damage;
     public int tears;
     public bool isDead;
 
-    void Start()
+    public virtual void Start()
     {
-        health = 50;
-        attDamage = 3;
-        tears = 0;
+        //tears = 0;
         isDead = false;
-
-
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
-        Death();
-        if (Input.GetKeyDown(KeyCode.Z))
+        //Death(); 
+        if(isDead)
         {
-            TakeDamage(50);
+            Death(); 
         }
     }
-    public void TakeDamage(float damg)
+    public virtual void TakeDamage(float damg)
     {
         health -= damg;
-    }
-    void Death()
-    {
-        if (health <= 0)
+        if(health <= 0)
         {
-            isDead = true;
-            Debug.Log("Is Deads");
-        }
-        if (isDead == true)
-        {
-            
+            isDead = true; 
         }
     }
-    void OnTriggerEnter(Collider other)
+    public virtual void Death()
     {
+        // To do play death anim 
+        Debug.Log(gameObject.name + " died");
         
     }
+    
 }
