@@ -44,7 +44,7 @@ public class InputManager : MonoBehaviour {
         //Player Attack Script
         if (psScript.hasWeapon)
         {
-            Attack();
+            HammerAttack();
         }
         else
         {
@@ -107,33 +107,32 @@ public class InputManager : MonoBehaviour {
         paScript.combo = 0;
         paScript.comboEnd = false;
     }
-    void Attack()
+    void HammerAttack()
     {
         if ((Input.GetButtonDown(swingButton)) && paScript.comboEnd == false)
         {
-
-            //Debug.Log("attack!");
+            
+            Debug.Log("attack!");
             paScript.combo += 1;
             paScript.attackTimer = paScript.attackDelay;
             paScript.isAttacking = true;
             anim.SetBool("IsAttacking", true);
-
             if (paScript.combo >= 1)
             {
                 paScript.comboEnd = true;
                 StartCoroutine(ResetCombo());
-
+                
             }
         }
 
-        if (paScript.attackTimer <= 0.0f)
+        if(paScript.attackTimer <= 0.0f)
         {
             paScript.attackTimer = 0.0f;
             paScript.combo = 0;
             paScript.isAttacking = false;
             anim.SetBool("IsAttacking", false);
             // TO-DO Add camera shake here 
-
+            
         }
         else
         {
