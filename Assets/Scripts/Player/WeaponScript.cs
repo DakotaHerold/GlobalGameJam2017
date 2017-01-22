@@ -8,6 +8,7 @@ public class WeaponScript : MonoBehaviour
     // Use this for initialization
     public GameObject player;
     public float spinSpeed;
+    public AudioClip hitSound; 
 
 	
 	// Update is called once per frame
@@ -25,6 +26,8 @@ public class WeaponScript : MonoBehaviour
             //GameManager.gmInstance.cameraShaker.ShakeCamera();
             if (this.GetComponentInParent<PlayerAttack>().combo == 0)
             {
+                gameObject.GetComponent<AudioSource>().PlayOneShot(hitSound, 1.0f);
+                Debug.Log("Playing sound");  
                 collision.gameObject.GetComponent<EnemyScript>().contact = 0;
                 //other.GetComponent<Renderer>().material.color = other.GetComponent<EnemyScript>().GetCurrentColor();
             }
