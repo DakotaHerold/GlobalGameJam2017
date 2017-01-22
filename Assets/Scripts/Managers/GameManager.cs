@@ -27,7 +27,9 @@ public class GameManager : MonoBehaviour {
     [HideInInspector]
     public CameraControl cameraController;
     [HideInInspector]
-    public CameraShake cameraShaker; 
+    public CameraShake cameraShaker;
+
+    MenuManager mm = new MenuManager();
 
 	// Use this for initialization
 	void Start () {
@@ -66,7 +68,8 @@ public class GameManager : MonoBehaviour {
         if(players.Count < 1)
         {
             // TO-DO Game over logic here 
-            return; 
+            mm.LoadGameOver();
+            //return; 
         }
         
         // Iterate over players 
