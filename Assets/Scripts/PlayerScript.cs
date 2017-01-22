@@ -53,10 +53,6 @@ public class PlayerScript : MonoBehaviour {
 	void Update ()
     {
         Death();
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            TakeDamage(50);
-        }
         HealthReGen();
         CheckIfPing();
         ThrowStick();
@@ -79,7 +75,7 @@ public class PlayerScript : MonoBehaviour {
     {
         yield return new WaitForSeconds(regenTimer);
         regainHealth = false;
-        if (hasWeapon == false && health < 100)
+        if (hasWeapon == false && health < 6)
         {
             health += healthGen;
         }
@@ -115,7 +111,7 @@ public class PlayerScript : MonoBehaviour {
     {
         if(hasWeapon == true)
         {
-            if (Input.GetKeyDown(KeyCode.C) || Input.GetButtonDown(throwButton))
+            if (Input.GetButtonDown(throwButton))
             {
                 stickHold.transform.GetChild(0).gameObject.SetActive(false);
                 anim.SetBool("HasWeapon", false);

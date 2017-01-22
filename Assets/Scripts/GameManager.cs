@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour {
     private PlayerScript stickPlayer;
     private PlayerScript wavePlayer; 
     private float spawnTimer = 0.0f;
-    private CameraControl cameraController; 
+    public CameraControl cameraController; 
 
 	// Use this for initialization
 	void Start () {

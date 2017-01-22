@@ -17,7 +17,6 @@ public class CameraControl : MonoBehaviour
     private Vector3 m_MoveVelocity;                 // Reference velocity for the smooth damping of the position.
     private Vector3 m_DesiredPosition;              // The position the camera is moving towards.
 
-
     private void Awake()
     {
         m_Camera = GetComponentInChildren<Camera>();
@@ -33,14 +32,19 @@ public class CameraControl : MonoBehaviour
         }
     }
 
-
     private void FixedUpdate()
     {
+        if(Input.GetButtonDown("Swing0"))
+        {
+            CameraShake camera = GetComponent<CameraShake>();
+            camera.ShakeCamera(5, 10); 
+        }
         // Move the camera towards a desired position.
-        Move();
+        //Move();
 
         // Change the size of the camera based.
-        Zoom();
+        //Zoom();
+        
     }
 
 
@@ -145,4 +149,8 @@ public class CameraControl : MonoBehaviour
         // Find and set the required size of the camera.
         m_Camera.orthographicSize = FindRequiredSize();
     }
+
+
+
+   
 }
