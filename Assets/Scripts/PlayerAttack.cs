@@ -42,7 +42,7 @@ public class PlayerAttack : MonoBehaviour {
         
         if (m_playerScript.hasWeapon)
         {
-            Attack();
+            HammerAttack();
         }
         else
         {
@@ -72,7 +72,7 @@ public class PlayerAttack : MonoBehaviour {
         combo = 0;
         comboEnd = false;
     }
-    void Attack()
+    void HammerAttack()
     {
         if ((Input.GetButtonDown(swingButton)) && comboEnd == false)
         {
@@ -82,7 +82,6 @@ public class PlayerAttack : MonoBehaviour {
             attackTimer = attackDelay;
             isAttacking = true;
             animator.SetBool("IsAttacking", true);
-
             if (combo >= 1)
             {
                 comboEnd = true;
