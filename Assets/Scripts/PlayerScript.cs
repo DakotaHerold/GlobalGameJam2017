@@ -132,6 +132,7 @@ public class PlayerScript : MonoBehaviour {
         {
             TakeDamage(other.GetComponent<EnemyScript>().attDamage);
         }*/
+       
         if (other.gameObject.tag == "tear")
         {
             tears += 1;
@@ -140,6 +141,7 @@ public class PlayerScript : MonoBehaviour {
         {
             if (other.gameObject.tag == "stick")
             {
+                Debug.Log("test");
                 hasWeapon = true;
                 anim.SetBool("HasWeapon", true);
 
