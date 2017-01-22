@@ -27,22 +27,32 @@ public class MeleeAIController : EnemyScript {
     // Update is called once per frame
     new void Update()
     {
+        //base.anim.SetBool("GotHit", false);
+        //base.anim.SetBool("IsAttacking", false);
         base.Update(); 
         // Add the time since Update was last called to the timer.
         damageTimer += Time.deltaTime;
 
         // Seek player if agent exists
         if (agent == null)
-            return; 
+            return;
+
+
+        
 
         agent.SetDestination(target.position);
-        
+        base.anim.SetBool("IsMoving", true);
 
-        
 
-        if(damageTimer >= damageInterval && attacking == true)
+
+        if (damageTimer >= damageInterval && attacking == true)
         {
+            base.anim.SetBool("IsAttacking", true);
             DealDamage(); 
+        }
+        else
+        {
+            //base.anim.SetBool("IsAttacking", false);
         }
         
     }
@@ -74,7 +84,8 @@ public class MeleeAIController : EnemyScript {
         if (player != null)
         { 
             attacking = false;
-            player = null; 
+            player = null;
+            //
         }
     }
 
@@ -83,7 +94,7 @@ public class MeleeAIController : EnemyScript {
         damageTimer = 0.0f;
         // Asserts player is not null
         if (player != null)
-        {
+        {         
             player.isHit = true;
             player.TakeDamage(damage);
             //Debug.Log("Player health:" + player.health);
