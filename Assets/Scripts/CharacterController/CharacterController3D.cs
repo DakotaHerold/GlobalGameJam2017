@@ -43,18 +43,24 @@ public class CharacterController3D : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        // Apply rotation 
-        transform.Rotate(0, Input.GetAxis(horizontalMovementAxis) * rotationSpeed, 0);
-
         // Apply translation 
         if (controller.isGrounded)
         {
-            //moveDirection = new Vector3(Input.GetAxis(horizontalMovementAxis), 0, Input.GetAxis(verticalMovementAxis));
-            moveDirection = Vector3.forward * (Input.GetAxis(verticalMovementAxis1) + Input.GetAxis(verticalMovementAxis2)); 
+            Debug.Log("Axis: " + Input.GetAxis(verticalMovementAxis1));
+            Debug.Log("Foward: " + transform.forward);
+
+            if (Input.GetAxis(verticalMovementAxis1) != 0 || Input.GetAxis(verticalMovementAxis2) != 0)
+            {
+                transform.forward = new Vector3(-Input.GetAxis(verticalMovementAxis2), transform.forward.y, Input.GetAxis(verticalMovementAxis1));
+                moveDirection = Vector3.forward;
+            }
+            else
+            {
+                moveDirection = Vector3.forward * 0;
+            }
             moveDirection = transform.TransformDirection(moveDirection);
             moveDirection *= movementSpeed;
-            //Debug.Log("Moving");
-            
+
             if(moveDirection == Vector3.zero)
             {
                 anim.SetBool("IsMoving",false);
@@ -66,6 +72,7 @@ public class CharacterController3D : MonoBehaviour {
         }
         moveDirection.y -= gravity * Time.deltaTime;
         controller.Move(moveDirection * Time.deltaTime);
+
 
     }
 
