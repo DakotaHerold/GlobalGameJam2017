@@ -30,7 +30,7 @@ public class PlayerAttack : MonoBehaviour {
 
         swingButton = "Swing" + playerNumber;
         specialButton = "Special" + playerNumber;
-
+        //Debug.Log(swingButton);
         animator = GetComponent<Animator>();
 
         m_playerScript = GetComponent<PlayerScript>(); 
@@ -38,6 +38,8 @@ public class PlayerAttack : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        
         if (m_playerScript.hasWeapon)
         {
             Attack();
@@ -93,6 +95,8 @@ public class PlayerAttack : MonoBehaviour {
             combo = 0;
             isAttacking = false;
             animator.SetBool("IsAttacking", false);
+            // TO-DO Add camera shake here 
+            //GameManager.gmInstance.cameraController.ShakeEvent(); 
         }
         else
         {
