@@ -13,6 +13,8 @@ public class EnemyScript : MonoBehaviour {
     public bool isDead;
     public Transform target;
 
+    protected Animator anim;
+
     [HideInInspector]
     public int contact = 0;
 
@@ -26,6 +28,8 @@ public class EnemyScript : MonoBehaviour {
         currentColor = GetComponent<Renderer>().material.color;
         isDead = false;
         agent = GetComponent<NavMeshAgent>();
+
+        anim = GetComponent<Animator>();
 
         agent.speed = speed;
         if (angularSpeed == 0.0f)
@@ -47,13 +51,14 @@ public class EnemyScript : MonoBehaviour {
         //Death(); 
         if (isDead)
         {
+            anim.SetBool("IsDead", true);
             Death(); 
         }
     }
     public virtual void TakeDamage(float damg)
     {
         Debug.Log("Health before " + health);
-        
+        anim.SetBool("GotHit", true);
         health -= damg;
         if(health <= 0)
         {
