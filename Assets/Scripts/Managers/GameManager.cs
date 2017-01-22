@@ -26,14 +26,14 @@ public class GameManager : MonoBehaviour {
     private float spawnTimer = 0.0f;
     [HideInInspector]
     public CameraControl cameraController;
-    [HideInInspector]
-    public CameraShake cameraShaker; 
+    //[HideInInspector]
+    //public CameraShake cameraShaker; 
 
 	// Use this for initialization
 	void Start () {
         gmInstance = this; 
         cameraController = cameraObject.GetComponent<CameraControl>();
-        cameraShaker = cameraObject.transform.GetChild(0).GetComponent<CameraShake>(); 
+        //cameraShaker = cameraObject.transform.GetChild(0).GetComponent<CameraShake>(); 
         playersObjects = GameObject.FindGameObjectsWithTag("player") as GameObject[];
    
         foreach(GameObject obj in playersObjects)
@@ -200,6 +200,12 @@ public class GameManager : MonoBehaviour {
     {
         return wavePlayer;
     }
+
+    //public void ChangeSpawnPoints()
+    //{
+    //    enemySpawnPoints.Clear();
+    //    usedSpawnPoints.Clear(); 
+    //}
 
 
 

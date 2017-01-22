@@ -86,7 +86,7 @@ public class MeleeAIController : EnemyScript {
         {
             player.isHit = true;
             player.TakeDamage(damage);
-            Debug.Log("Player health:" + player.health);
+            //Debug.Log("Player health:" + player.health);
         }
         
     }

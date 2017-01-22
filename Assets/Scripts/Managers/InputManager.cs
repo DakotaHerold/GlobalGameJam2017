@@ -97,7 +97,7 @@ public class InputManager : MonoBehaviour {
     {
         if ((Input.GetButtonDown(pingButton)) && psScript.hasWeapon == false)
         {
-            Debug.Log("Is pinging");
+            //Debug.Log(playerNumber + " is pinging"); 
         }
     }
 
