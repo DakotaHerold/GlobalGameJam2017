@@ -11,6 +11,8 @@ public class PlayerAttack : MonoBehaviour {
     public bool isAttacking;
     public bool comboEnd;
     public bool specialActive;
+    public GameObject waveProjectilePrefab;
+    public float waveSpeed;  
     bool isHit;
 
     Animator anim;
@@ -18,7 +20,7 @@ public class PlayerAttack : MonoBehaviour {
     private int playerNumber;
     private string swingButton;
     private string specialButton;
-    private PlayerScript playerScript; 
+    private PlayerScript m_playerScript; 
     // Use this for initialization
     void Start () {
         isAttacking = false;
@@ -32,12 +34,12 @@ public class PlayerAttack : MonoBehaviour {
 
         anim = GetComponent<Animator>();
 
-        playerScript = GetComponent<PlayerScript>(); 
+        m_playerScript = GetComponent<PlayerScript>(); 
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if (playerScript.hasWeapon)
+        if (m_playerScript.hasWeapon)
         {
             Attack();
         }
@@ -98,7 +100,21 @@ public class PlayerAttack : MonoBehaviour {
     }
     void Special()
     {
-        Debug.Log(playerNumber + " Special Logic!");
+        //Debug.Log(playerNumber + " Special Logic!");
+        GameManager.gmInstance.SetWavePlayer(m_playerScript);
+        PlayerScript stickPlayer = GameManager.gmInstance.GetStickPlayer();
+
+        if (stickPlayer != null)
+        {
+            // Create wave and launch forward 
+            waveProjectilePrefab.transform.position = new Vector3(stickPlayer.transform.position.x, stickPlayer.transform.position.y + 2.0f, stickPlayer.transform.position.z);
+            GameObject wave = Instantiate(waveProjectilePrefab);
+            Rigidbody wavePhysics = wave.GetComponent<Rigidbody>();
+
+            Vector3 targetVelocity = transform.forward.normalized * waveSpeed;
+            targetVelocity.y = 0;
+            wavePhysics.velocity = targetVelocity;
+        }
     }
 
 }

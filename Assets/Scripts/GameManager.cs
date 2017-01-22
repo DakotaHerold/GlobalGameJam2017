@@ -5,6 +5,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
 
     // Attributes
+
+    public static GameManager gmInstance = null;
+
     public GameObject cameraObject; 
     public GameObject spawnContainer;
     public GameObject[] enemyObjectPrefabs; 
@@ -18,13 +21,14 @@ public class GameManager : MonoBehaviour {
     private List<Transform> spawnedEnemies = new List<Transform>(); 
     private GameObject[] playersObjects;
     private List<PlayerScript> players = new List<PlayerScript>(); 
-    private PlayerScript stickPlayer; 
+    private PlayerScript stickPlayer;
+    private PlayerScript wavePlayer; 
     private float spawnTimer = 0.0f;
     private CameraControl cameraController; 
 
 	// Use this for initialization
 	void Start () {
-
+        gmInstance = this; 
         cameraController = cameraObject.GetComponent<CameraControl>(); 
 
         playersObjects = GameObject.FindGameObjectsWithTag("player") as GameObject[];
@@ -66,6 +70,10 @@ public class GameManager : MonoBehaviour {
             if(players[i].hasWeapon)
             {
                 stickPlayer = players[i];
+            }
+            else
+            {
+                wavePlayer = players[i]; 
             }
 
             // Check if players died, if so remove them from the camera manager and destroy them 
@@ -173,7 +181,26 @@ public class GameManager : MonoBehaviour {
         
     }
 
+    public void SetStickPlayer(PlayerScript player)
+    {
+        stickPlayer = player; 
+    }
 
-   
+    public PlayerScript GetStickPlayer()
+    {
+        return stickPlayer;
+    }
+
+    public void SetWavePlayer(PlayerScript player)
+    {
+        wavePlayer = player;
+    }
+
+    public PlayerScript GetWavePlayer()
+    {
+        return wavePlayer;
+    }
+
+
 
 }
