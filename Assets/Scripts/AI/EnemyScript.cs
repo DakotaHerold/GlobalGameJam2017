@@ -13,6 +13,8 @@ public class EnemyScript : MonoBehaviour {
     public bool isDead;
     public Transform target;
 
+    protected Animator anim;
+
     [HideInInspector]
     public int contact = 0;
 
@@ -27,6 +29,8 @@ public class EnemyScript : MonoBehaviour {
         isDead = false;
         agent = GetComponent<NavMeshAgent>();
 
+        anim = GetComponent<Animator>();
+
         agent.speed = speed;
         if (angularSpeed == 0.0f)
         {
@@ -40,6 +44,7 @@ public class EnemyScript : MonoBehaviour {
         //Death(); 
         if(isDead)
         {
+            anim.SetBool("IsDead", true);
             Death(); 
         }
     }
@@ -47,6 +52,7 @@ public class EnemyScript : MonoBehaviour {
     {
         //Debug.Log("Health before " + health);
         GameManager.gmInstance.cameraShaker.ShakeCamera();
+        anim.SetBool("GotHit", true);
         health -= damg;
         if(health <= 0)
         {
