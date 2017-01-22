@@ -22,11 +22,12 @@ public class WeaponScript : MonoBehaviour
     {
         if(collision.gameObject.tag == "enemy" && transform.parent != null)
         {
+            gameObject.GetComponent<AudioSource>().PlayOneShot(hitSound, 1.0f);
             //Debug.Log("Enemy Hit!"); 
             //GameManager.gmInstance.cameraShaker.ShakeCamera();
             if (this.GetComponentInParent<PlayerAttack>().combo == 0)
             {
-                gameObject.GetComponent<AudioSource>().PlayOneShot(hitSound, 1.0f);
+                
                 Debug.Log("Playing sound");  
                 collision.gameObject.GetComponent<EnemyScript>().contact = 0;
                 //other.GetComponent<Renderer>().material.color = other.GetComponent<EnemyScript>().GetCurrentColor();
