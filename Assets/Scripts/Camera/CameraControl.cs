@@ -34,16 +34,12 @@ public class CameraControl : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(Input.GetButtonDown("Swing0"))
-        {
-            CameraShake camera = GetComponent<CameraShake>();
-            camera.ShakeCamera(5, 10); 
-        }
+        
         // Move the camera towards a desired position.
-        //Move();
+        Move();
 
         // Change the size of the camera based.
-        //Zoom();
+        Zoom();
         
     }
 
@@ -77,8 +73,7 @@ public class CameraControl : MonoBehaviour
             averagePos += cameraTargets[i].position;
             numTargets++;
         }
-        
-        
+         
 
         // If there are targets divide the sum of the positions by the number of them to find the average.
         if (numTargets > 0)

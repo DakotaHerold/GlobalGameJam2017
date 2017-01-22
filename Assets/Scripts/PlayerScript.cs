@@ -52,6 +52,10 @@ public class PlayerScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        if (Input.GetButtonDown("Swing1"))
+        {
+            GameManager.gmInstance.cameraShaker.ShakeCamera(0.0001f, 0.01f);
+        }
         Death();
         HealthReGen();
         CheckIfPing();

@@ -76,6 +76,7 @@ public class PlayerAttack : MonoBehaviour {
     {
         if ((Input.GetButtonDown(swingButton)) && comboEnd == false)
         {
+            
             Debug.Log("attack!");
             combo += 1;
             attackTimer = attackDelay;
@@ -86,6 +87,7 @@ public class PlayerAttack : MonoBehaviour {
             {
                 comboEnd = true;
                 StartCoroutine(ResetCombo());
+                
             }
         }
 
@@ -96,7 +98,7 @@ public class PlayerAttack : MonoBehaviour {
             isAttacking = false;
             animator.SetBool("IsAttacking", false);
             // TO-DO Add camera shake here 
-            //GameManager.gmInstance.cameraController.ShakeEvent(); 
+            
         }
         else
         {
