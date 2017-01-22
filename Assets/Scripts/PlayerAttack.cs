@@ -14,7 +14,7 @@ public class PlayerAttack : MonoBehaviour {
     public GameObject waveProjectilePrefab;
     bool isHit;
 
-    Animator anim;
+    Animator animator;
 
     private int playerNumber;
     private string swingButton;
@@ -31,7 +31,7 @@ public class PlayerAttack : MonoBehaviour {
         swingButton = "Swing" + playerNumber;
         specialButton = "Special" + playerNumber;
 
-        anim = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
 
         m_playerScript = GetComponent<PlayerScript>(); 
     }
@@ -78,8 +78,9 @@ public class PlayerAttack : MonoBehaviour {
             combo += 1;
             attackTimer = attackDelay;
             isAttacking = true;
+            animator.SetBool("IsAttacking", true);
 
-            if (combo >= 3)
+            if (combo >= 1)
             {
                 comboEnd = true;
                 StartCoroutine(ResetCombo());
@@ -91,6 +92,7 @@ public class PlayerAttack : MonoBehaviour {
             attackTimer = 0.0f;
             combo = 0;
             isAttacking = false;
+            animator.SetBool("IsAttacking", false);
         }
         else
         {
