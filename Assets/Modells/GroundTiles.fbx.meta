@@ -1,0 +1,133 @@
+fileFormatVersion: 2
+guid: 2388122b7605c4f4f90b422543d7256c
+timeCreated: 1485048106
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Crack_1_1
+    100002: Crack_1_2
+    100004: Crack_2_1
+    100006: Crack_2_2
+    100008: Crack_3_1
+    100010: Crack_3_2
+    100012: Crack_4_1
+    100014: Crack_4_2
+    100016: FullBreak_1
+    100018: FullBreak_2
+    100020: //RootNode
+    100022: Tile
+    400000: Crack_1_1
+    400002: Crack_1_2
+    400004: Crack_2_1
+    400006: Crack_2_2
+    400008: Crack_3_1
+    400010: Crack_3_2
+    400012: Crack_4_1
+    400014: Crack_4_2
+    400016: FullBreak_1
+    400018: FullBreak_2
+    400020: //RootNode
+    400022: Tile
+    2300000: Crack_1_1
+    2300002: Crack_1_2
+    2300004: Crack_2_1
+    2300006: Crack_2_2
+    2300008: Crack_3_1
+    2300010: Crack_3_2
+    2300012: Crack_4_1
+    2300014: Crack_4_2
+    2300016: FullBreak_1
+    2300018: FullBreak_2
+    2300020: Tile
+    3300000: Crack_1_1
+    3300002: Crack_1_2
+    3300004: Crack_2_1
+    3300006: Crack_2_2
+    3300008: Crack_3_1
+    3300010: Crack_3_2
+    3300012: Crack_4_1
+    3300014: Crack_4_2
+    3300016: FullBreak_1
+    3300018: FullBreak_2
+    3300020: Tile
+    4300000: Tile
+    4300002: FullBreak_1
+    4300004: FullBreak_2
+    4300006: Crack_1_1
+    4300008: Crack_1_2
+    4300010: Crack_2_1
+    4300012: Crack_2_2
+    4300014: Crack_3_1
+    4300016: Crack_3_2
+    4300018: Crack_4_1
+    4300020: Crack_4_2
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 20
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
