@@ -46,6 +46,7 @@ public class EnemyScript : MonoBehaviour {
     public virtual void TakeDamage(float damg)
     {
         //Debug.Log("Health before " + health);
+        GameManager.gmInstance.cameraShaker.ShakeCamera();
         health -= damg;
         if(health <= 0)
         {

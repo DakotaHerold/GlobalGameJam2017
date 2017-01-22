@@ -27,13 +27,13 @@ public class GameManager : MonoBehaviour {
     [HideInInspector]
     public CameraControl cameraController;
     //[HideInInspector]
-    //public CameraShake cameraShaker; 
+    public CameraRumble cameraShaker; 
 
 	// Use this for initialization
 	void Start () {
         gmInstance = this; 
         cameraController = cameraObject.GetComponent<CameraControl>();
-        //cameraShaker = cameraObject.transform.GetChild(0).GetComponent<CameraShake>(); 
+        cameraShaker = cameraObject.transform.GetChild(0).GetComponent<CameraRumble>(); 
         playersObjects = GameObject.FindGameObjectsWithTag("player") as GameObject[];
    
         foreach(GameObject obj in playersObjects)
