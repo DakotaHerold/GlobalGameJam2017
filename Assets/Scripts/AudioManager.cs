@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour 
 {
+    public AudioSource musicSource;
+
+    public AudioClip backgroundClip;
 
 	// Use this for initialization
-	void Start () 
+	void Awake () 
     {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () 
-    {
-		
+        musicSource = GetComponent<AudioSource>();
+        musicSource.clip = backgroundClip;
+        musicSource.Play();
 	}
 }
