@@ -21,12 +21,10 @@ public class GUIManager : MonoBehaviour {
         brainSwitch = 2;
         for (int i = 0; i < startHealth; i++)
         {
-            brainsP1[i].enabled = true;
             brainsP1[i].sprite = brainParts[brainSwitch];
         }
         for (int i = 0; i < startHealth; i++)
         {
-            brainsP2[i].enabled = true;
             brainsP2[i].sprite = brainParts[brainSwitch];
         }
     }

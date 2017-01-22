@@ -25,10 +25,6 @@ public class PlayerScript : MonoBehaviour {
     public CharacterController3D controller; 
 
     Animator anim;
-
-    private int playerNumber;
-    private string throwButton;
-    private string pingButton;
     
     void Start ()
     {
@@ -39,27 +35,16 @@ public class PlayerScript : MonoBehaviour {
         hasWeapon = false;
         isPinging = false;
         controller = GetComponent<CharacterController3D>(); 
-        playerNumber = controller.playerNumber;
 
         anim = GetComponent<Animator>();
-
-        playerNumber = 0;
-        throwButton = "Throw" + playerNumber;
-        pingButton = "Ping" + playerNumber;
         
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        if (Input.GetButtonDown("Swing1"))
-        {
-            GameManager.gmInstance.cameraShaker.ShakeCamera(0.0001f, 0.01f);
-        }
         Death();
         HealthReGen();
-        CheckIfPing();
-        ThrowStick();
         if(immunity > 0.0f)
         {
             immunity -= 0.01f;
@@ -92,13 +77,7 @@ public class PlayerScript : MonoBehaviour {
             StartCoroutine(healthRegen());
         }
     }
-    void CheckIfPing()
-    {
-        if ((Input.GetButtonDown(pingButton)) && hasWeapon == false)
-        {
-            Debug.Log("Is pinging");
-        }
-    }
+
     void Death()
     {
         if (health <= 0)
@@ -111,27 +90,7 @@ public class PlayerScript : MonoBehaviour {
             healthGen = 0;
         }
     }
-    void ThrowStick()
-    {
-        if(hasWeapon == true)
-        {
-            if (Input.GetButtonDown(throwButton))
-            {
-                stickHold.transform.GetChild(0).gameObject.SetActive(false);
-                anim.SetBool("HasWeapon", false);
-                GameObject stickClone = Instantiate(StickPrefab, stickSpawn.transform.position, stickSpawn.transform.rotation) as GameObject;
-                Rigidbody stickPhysics = stickClone.GetComponent<Rigidbody>(); // You should be able to hold to throw?
 
-                Vector3 targetVelocity = (transform.forward + transform.up).normalized * throwingSpeed;
-                stickPhysics.velocity = targetVelocity;
-                hasWeapon = false;
-            }
-        }
-        else
-        {
-            stickHold.transform.GetChild(0).gameObject.SetActive(false);
-        }
-    }
     void OnTriggerEnter(Collider other)
     {
         /*if (other.gameObject.tag == "enemy")
