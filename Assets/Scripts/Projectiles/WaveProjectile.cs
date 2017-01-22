@@ -23,6 +23,8 @@ public class WaveProjectile : MonoBehaviour {
         controller = controllingPlayer.controller;
         body = GetComponent<Rigidbody>();
 
+        //Debug.Log("Wave player : " + controller.playerNumber);
+        body.transform.forward = controller.transform.forward; 
         horizontalMovementAxis = "Horizontal" + playerNum;
     }
 	
@@ -38,7 +40,6 @@ public class WaveProjectile : MonoBehaviour {
 
         // Apply rotation 
         transform.Rotate(0, Input.GetAxis(horizontalMovementAxis) * rotationSpeed, 0);
-
 
         Vector3 targetVelocity = transform.forward.normalized * moveSpeed;
         targetVelocity.y = 0;

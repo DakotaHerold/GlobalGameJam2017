@@ -44,7 +44,7 @@ public class InputManager : MonoBehaviour {
         ThrowStick();
         //Player Attack Script
         if (psScript.hasWeapon)
-        {
+        {          
             HammerAttack();
         }
         else
@@ -97,7 +97,7 @@ public class InputManager : MonoBehaviour {
     {
         if ((Input.GetButtonDown(pingButton)) && psScript.hasWeapon == false)
         {
-            Debug.Log("Is pinging");
+            //Debug.Log(playerNumber + " is pinging"); 
         }
     }
 
@@ -112,8 +112,9 @@ public class InputManager : MonoBehaviour {
     {
         if ((Input.GetButtonDown(swingButton)) && paScript.comboEnd == false)
         {
-            
-            Debug.Log("attack!");
+            // TO-DO find out how to call this at the end of animation 
+            //GameManager.gmInstance.cameraShaker.ShakeCamera();
+            //Debug.Log("attack!");
             paScript.combo += 1;
             paScript.attackTimer = paScript.attackDelay;
             paScript.isAttacking = true;

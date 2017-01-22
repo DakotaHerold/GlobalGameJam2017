@@ -33,7 +33,10 @@ public class MeleeAIController : EnemyScript {
 
         // Seek player if agent exists
         if (agent == null)
-            return; 
+            return;
+
+
+        
 
         agent.SetDestination(target.position);
         
@@ -86,7 +89,7 @@ public class MeleeAIController : EnemyScript {
         {
             player.isHit = true;
             player.TakeDamage(damage);
-            Debug.Log("Player health:" + player.health);
+            //Debug.Log("Player health:" + player.health);
         }
         
     }
