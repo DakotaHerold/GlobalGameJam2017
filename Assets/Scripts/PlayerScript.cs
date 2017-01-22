@@ -141,9 +141,10 @@ public class PlayerScript : MonoBehaviour {
         {
             if (other.gameObject.tag == "stick")
             {
-                Debug.Log("test");
+                //Debug.Log("test");
                 hasWeapon = true;
                 anim.SetBool("HasWeapon", true);
+                stickHold.transform.GetChild(0).GetComponent<WeaponScript>().player = this.gameObject;
 
                 stickHold.transform.GetChild(0).gameObject.SetActive(true);
                 Destroy(other.gameObject);

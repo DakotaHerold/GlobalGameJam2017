@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class WeaponScript : MonoBehaviour {
 
-	// Use this for initialization
+    // Use this for initialization
+    public GameObject player;
 	void Start () {
 		
 	}
@@ -27,9 +28,9 @@ public class WeaponScript : MonoBehaviour {
             if (this.GetComponentInParent<PlayerAttack>().isAttacking == true && other.GetComponent<EnemyScript>().contact != this.GetComponentInParent<PlayerAttack>().combo)
             {
                 Debug.Log("Hit!");
-                other.GetComponent<Renderer>().material.color = Color.green;
-                other.GetComponent<EnemyScript>().TakeDamage(transform.parent.GetComponent<PlayerAttack>().attDamage);
-                other.GetComponent<EnemyScript>().contact = this.GetComponentInParent<PlayerAttack>().combo;
+                other.GetComponent<Renderer>().material.color = Color.red;
+                other.GetComponent<EnemyScript>().TakeDamage(player.GetComponent<PlayerAttack>().attDamage);
+                other.GetComponent<EnemyScript>().contact = player.GetComponent<PlayerAttack>().combo;
             }
             else
             {
