@@ -19,10 +19,10 @@ public class CameraShake : MonoBehaviour {
     float startAmount;//The initial shake amount (to determine percentage), set when ShakeCamera is called.
     float startDuration;//The initial shake duration, set when ShakeCamera is called.
 
-    bool isRunning = false; //Is the coroutine running right now?
+    public bool isRunning = false; //Is the coroutine running right now?
 
-    public bool smooth;//Smooth rotation?
-    public float smoothAmount = 5f;//Amount to smooth
+    public bool smooth; //Smooth rotation?
+    public float smoothAmount = 5f; //Amount to smooth
 
     void Start()
     {
@@ -42,7 +42,6 @@ public class CameraShake : MonoBehaviour {
 
     public void ShakeCamera(float amount, float duration)
     {
-
         shakeAmount += amount;//Add to the current amount.
         startAmount = shakeAmount;//Reset the start amount, to determine percentage.
         shakeDuration += duration;//Add to the current time.
@@ -66,7 +65,6 @@ public class CameraShake : MonoBehaviour {
             shakeAmount = startAmount * shakePercentage;//Set the amount of shake (% * startAmount).
             shakeDuration = Mathf.Lerp(shakeDuration, 0, Time.deltaTime);//Lerp the time, so it is less and tapers off towards the end.
 
-
             if (smooth)
                 transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(rotationAmount), Time.deltaTime * smoothAmount);
             else
@@ -76,5 +74,6 @@ public class CameraShake : MonoBehaviour {
         }
         transform.localRotation = Quaternion.identity;//Set the local rotation to 0 when done, just to get rid of any fudging stuff.
         isRunning = false;
+        //Debug.Log("is running set to false"); 
     }
 }
