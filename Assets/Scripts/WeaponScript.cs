@@ -2,18 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponScript : MonoBehaviour {
+public class WeaponScript : MonoBehaviour 
+{
 
     // Use this for initialization
     public GameObject player;
-	void Start () {
-		
-	}
+    public float spinSpeed;
+
 	
 	// Update is called once per frame
-	void Update () {
-		
+	void Update ()
+    {
+        // spin the weapon
+        transform.Rotate(Vector3.up, spinSpeed * Time.deltaTime);
 	}
+
     void OnTriggerStay(Collider other)
     {
         //Debug.Log("Parent " + this.transform.parent);
