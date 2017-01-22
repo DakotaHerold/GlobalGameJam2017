@@ -15,6 +15,8 @@ public class CharacterController3D : MonoBehaviour {
     private string horizontalMovementAxis;
     private string verticalMovementAxis1;
     private string verticalMovementAxis2;
+    private string triggerAxis;
+
 
     Animator anim;
 
@@ -32,6 +34,8 @@ public class CharacterController3D : MonoBehaviour {
         horizontalMovementAxis = "Horizontal" + playerNumber;
         verticalMovementAxis1 = "VerticalA" + playerNumber;
         verticalMovementAxis2 = "VerticalB" + playerNumber;
+        triggerAxis = "Wave" + playerNumber;
+
 
         anim = GetComponent<Animator>();
  	}
@@ -39,8 +43,10 @@ public class CharacterController3D : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        // Apply rotation 
         transform.Rotate(0, Input.GetAxis(horizontalMovementAxis) * rotationSpeed, 0);
 
+        // Apply translation 
         if (controller.isGrounded)
         {
             //moveDirection = new Vector3(Input.GetAxis(horizontalMovementAxis), 0, Input.GetAxis(verticalMovementAxis));
@@ -60,6 +66,11 @@ public class CharacterController3D : MonoBehaviour {
         }
         moveDirection.y -= gravity * Time.deltaTime;
         controller.Move(moveDirection * Time.deltaTime);
-       
+
+    }
+
+    public float GetTriggerAxisValue()
+    {
+        return Input.GetAxis(triggerAxis); 
     }
 }

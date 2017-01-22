@@ -21,11 +21,15 @@ public class PlayerScript : MonoBehaviour {
     public bool hasWeapon;
     public bool isPinging;
 
+    [HideInInspector]
+    public CharacterController3D controller; 
+
     Animator anim;
 
     private int playerNumber;
     private string throwButton;
     private string pingButton;
+    
     void Start ()
     {
         stickSpawn = transform.GetChild(0);
@@ -34,13 +38,15 @@ public class PlayerScript : MonoBehaviour {
         isDead = false;
         hasWeapon = false;
         isPinging = false;
-        playerNumber = GetComponent<CharacterController3D>().playerNumber;
+        controller = GetComponent<CharacterController3D>(); 
+        playerNumber = controller.playerNumber;
 
         anim = GetComponent<Animator>();
 
         playerNumber = 0;
         throwButton = "Throw" + playerNumber;
         pingButton = "Ping" + playerNumber;
+        
     }
 	
 	// Update is called once per frame

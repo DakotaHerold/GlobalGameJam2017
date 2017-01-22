@@ -12,7 +12,6 @@ public class PlayerAttack : MonoBehaviour {
     public bool comboEnd;
     public bool specialActive;
     public GameObject waveProjectilePrefab;
-    public float waveSpeed;  
     bool isHit;
 
     Animator anim;
@@ -108,12 +107,8 @@ public class PlayerAttack : MonoBehaviour {
         {
             // Create wave and launch forward 
             waveProjectilePrefab.transform.position = new Vector3(stickPlayer.transform.position.x, stickPlayer.transform.position.y + 2.0f, stickPlayer.transform.position.z);
+            waveProjectilePrefab.transform.forward = transform.forward; 
             GameObject wave = Instantiate(waveProjectilePrefab);
-            Rigidbody wavePhysics = wave.GetComponent<Rigidbody>();
-
-            Vector3 targetVelocity = transform.forward.normalized * waveSpeed;
-            targetVelocity.y = 0;
-            wavePhysics.velocity = targetVelocity;
         }
     }
 
