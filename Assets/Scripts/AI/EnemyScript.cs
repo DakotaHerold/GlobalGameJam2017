@@ -64,11 +64,14 @@ public class EnemyScript : MonoBehaviour {
         {
             isDead = true; 
         }
-        Debug.Log("After: " + health); 
+        Debug.Log("After: " + health);
+
+        gameObject.GetComponent<Animator>().Play("Hit");
     }
     public virtual void Death()
     {
         // TO DO play death anim 
+        gameObject.GetComponent<Animator>().Play("Death");
         agent = null; 
         if(GameManager.gmInstance.enemies.Contains(this.gameObject))
         {

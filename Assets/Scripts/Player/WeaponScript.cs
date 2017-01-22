@@ -22,7 +22,8 @@ public class WeaponScript : MonoBehaviour
     {
         if(collision.gameObject.tag == "enemy" && transform.parent != null)
         {
-            gameObject.GetComponent<AudioSource>().PlayOneShot(hitSound, 1.0f);
+            gameObject.GetComponent<AudioSource>().clip = hitSound;
+            gameObject.GetComponent<AudioSource>().Play();
             //Debug.Log("Enemy Hit!"); 
             //GameManager.gmInstance.cameraShaker.ShakeCamera();
             if (this.GetComponentInParent<PlayerAttack>().combo == 0)

@@ -1,0 +1,221 @@
+fileFormatVersion: 2
+guid: 2ebe60a4737ca634984b00e0a1fb3219
+timeCreated: 1485117052
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Arm
+    100002: Arm 1
+    100004: bind_Head
+    100006: bind_Jaw
+    100008: bind_L_Ankle
+    100010: bind_L_Ball
+    100012: bind_L_Elbow
+    100014: bind_L_Hand
+    100016: bind_L_Hip
+    100018: bind_L_Index_1
+    100020: bind_L_Index_2
+    100022: bind_L_Knee
+    100024: bind_L_Little_1
+    100026: bind_L_Little_2
+    100028: bind_L_Middle_1
+    100030: bind_L_Middle_2
+    100032: bind_L_Shoulder
+    100034: bind_L_Thumb_
+    100036: bind_L_Thumb_1
+    100038: bind_L_Thumb_2
+    100040: bind_L_Toe
+    100042: bind_Neck
+    100044: bind_R_Ankle
+    100046: bind_R_Ball
+    100048: bind_R_Elbow
+    100050: bind_R_Hand
+    100052: bind_R_Hip
+    100054: bind_R_Index_1
+    100056: bind_R_Index_2
+    100058: bind_R_Knee
+    100060: bind_R_Middle_1
+    100062: bind_R_Middle_2
+    100064: bind_R_Rittle_1
+    100066: bind_R_Rittle_2
+    100068: bind_R_Shoulder
+    100070: bind_R_Thumb_
+    100072: bind_R_Thumb_1
+    100074: bind_R_Thumb_2
+    100076: bind_R_Toe
+    100078: bind_Root
+    100080: bind_Spine_1
+    100082: bind_Spine_2
+    100084: CTRL_Global
+    100086: CTRL_Hips
+    100088: CTRL_Root
+    100090: FourHeadsSkel
+    100092: Head
+    100094: Hips2
+    100096: joint1
+    100098: Left_Arm
+    100100: Left_Arm_Right_Hand
+    100102: Left_Leg
+    100104: Neck
+    100106: Right_Arm
+    100108: Right_Arm_Right_Hand
+    100110: Right_Leg
+    100112: Skeleton
+    100114: //RootNode
+    100116: ZG_Global
+    100118: ZG_Hips
+    100120: ZG_Root
+    400000: Arm
+    400002: Arm 1
+    400004: bind_Head
+    400006: bind_Jaw
+    400008: bind_L_Ankle
+    400010: bind_L_Ball
+    400012: bind_L_Elbow
+    400014: bind_L_Hand
+    400016: bind_L_Hip
+    400018: bind_L_Index_1
+    400020: bind_L_Index_2
+    400022: bind_L_Knee
+    400024: bind_L_Little_1
+    400026: bind_L_Little_2
+    400028: bind_L_Middle_1
+    400030: bind_L_Middle_2
+    400032: bind_L_Shoulder
+    400034: bind_L_Thumb_
+    400036: bind_L_Thumb_1
+    400038: bind_L_Thumb_2
+    400040: bind_L_Toe
+    400042: bind_Neck
+    400044: bind_R_Ankle
+    400046: bind_R_Ball
+    400048: bind_R_Elbow
+    400050: bind_R_Hand
+    400052: bind_R_Hip
+    400054: bind_R_Index_1
+    400056: bind_R_Index_2
+    400058: bind_R_Knee
+    400060: bind_R_Middle_1
+    400062: bind_R_Middle_2
+    400064: bind_R_Rittle_1
+    400066: bind_R_Rittle_2
+    400068: bind_R_Shoulder
+    400070: bind_R_Thumb_
+    400072: bind_R_Thumb_1
+    400074: bind_R_Thumb_2
+    400076: bind_R_Toe
+    400078: bind_Root
+    400080: bind_Spine_1
+    400082: bind_Spine_2
+    400084: CTRL_Global
+    400086: CTRL_Hips
+    400088: CTRL_Root
+    400090: FourHeadsSkel
+    400092: Head
+    400094: Hips2
+    400096: joint1
+    400098: Left_Arm
+    400100: Left_Arm_Right_Hand
+    400102: Left_Leg
+    400104: Neck
+    400106: Right_Arm
+    400108: Right_Arm_Right_Hand
+    400110: Right_Leg
+    400112: Skeleton
+    400114: //RootNode
+    400116: ZG_Global
+    400118: ZG_Hips
+    400120: ZG_Root
+    4300000: Neck
+    4300002: Arm
+    4300004: Right_Arm_Right_Hand
+    4300006: Arm
+    4300008: Left_Arm_Right_Hand
+    4300010: Left_Leg
+    4300012: Right_Leg
+    4300014: Head
+    4300016: Hips2
+    7400000: Idle
+    7400002: Run
+    7400004: Attack
+    7400006: Death
+    7400008: Hit
+    9500000: //RootNode
+    13700000: Arm
+    13700002: Arm 1
+    13700004: Head
+    13700006: Hips2
+    13700008: Left_Arm_Right_Hand
+    13700010: Left_Leg
+    13700012: Neck
+    13700014: Right_Arm_Right_Hand
+    13700016: Right_Leg
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
