@@ -15,7 +15,7 @@ public class MeleeAIController : EnemyScript {
     private SphereCollider trigger; 
 
     private Vector3 moveDirection = Vector3.zero;
-    private PlayerScript player;
+    private PlayerScript player; 
 
     // Use this for initialization
     new void Start()
@@ -35,7 +35,9 @@ public class MeleeAIController : EnemyScript {
         if (agent == null)
             return;
 
-        base.anim.SetBool("IsMoving", true);
+
+        
+
         agent.SetDestination(target.position);
         
 
@@ -85,7 +87,6 @@ public class MeleeAIController : EnemyScript {
         // Asserts player is not null
         if (player != null)
         {
-            base.anim.SetBool("IsAttacking", true);
             player.isHit = true;
             player.TakeDamage(damage);
             //Debug.Log("Player health:" + player.health);

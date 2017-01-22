@@ -13,8 +13,6 @@ public class EnemyScript : MonoBehaviour {
     public bool isDead;
     public Transform target;
 
-    protected Animator anim;
-
     [HideInInspector]
     public int contact = 0;
 
@@ -29,8 +27,6 @@ public class EnemyScript : MonoBehaviour {
         isDead = false;
         agent = GetComponent<NavMeshAgent>();
 
-        anim = GetComponent<Animator>();
-
         agent.speed = speed;
         if (angularSpeed == 0.0f)
         {
@@ -41,24 +37,29 @@ public class EnemyScript : MonoBehaviour {
     // Update is called once per frame
     public virtual void Update()
     {
+        // Rotate towards target
+        Vector3 targetDir = target.position - transform.position;
+        float step = angularSpeed * Time.deltaTime;
+        Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0f);
+        //Debug.DrawRay(transform.position, newDir, Color.red);
+        transform.rotation = Quaternion.LookRotation(newDir);
+
         //Death(); 
-        if(isDead)
+        if (isDead)
         {
-            anim.SetBool("IsDead", true);
             Death(); 
         }
     }
     public virtual void TakeDamage(float damg)
     {
-        //Debug.Log("Health before " + health);
-        GameManager.gmInstance.cameraShaker.ShakeCamera();
-        anim.SetBool("GotHit", true);
+        Debug.Log("Health before " + health);
+        
         health -= damg;
         if(health <= 0)
         {
             isDead = true; 
         }
-        //Debug.Log("After: " + health); 
+        Debug.Log("After: " + health); 
     }
     public virtual void Death()
     {
