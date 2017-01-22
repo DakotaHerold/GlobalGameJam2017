@@ -7,12 +7,14 @@ public class ShooterAIController : EnemyScript {
 
     public float shootingSpeed = 10.0f; 
     public float shootingStartTime = 0.0f;
-    public float shootingInterval = 5.0f; 
+    public float shootingInterval = 5.0f;
+    public float shotBufferY; 
     public bool shooting = false;
 
-    public GameObject projectile; 
+    public GameObject projectile;
+    public float amplitudeY;
+    public float omegaY;
 
-    
 
     // Use this for initialization
     new void Start()
@@ -33,8 +35,16 @@ public class ShooterAIController : EnemyScript {
             return;
         }
 
+        // Rotate towards target
+        Vector3 targetDir = target.position - transform.position;
+        float step = angularSpeed * Time.deltaTime;
+        Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0f);
+        //Debug.DrawRay(transform.position, newDir, Color.red);
+        transform.rotation = Quaternion.LookRotation(newDir);
+
         if (!shooting)
         {
+            // translate towards target 
             agent.SetDestination(target.position);
         }
         
@@ -52,13 +62,13 @@ public class ShooterAIController : EnemyScript {
         agent.velocity = Vector3.zero; 
         // TO-DO play anim
         //Debug.Log("Shooting!");
-        projectile.transform.position = new Vector3(transform.position.x, transform.position.y + 2.0f, transform.position.z); 
-        GameObject bullet = Instantiate(projectile);
-        Rigidbody bulletPhysics = bullet.GetComponent<Rigidbody>();
-
-        Vector3 targetVelocity = (target.position - transform.position).normalized * shootingSpeed;
-        targetVelocity.y = 0;
-        bulletPhysics.velocity = targetVelocity; 
+        projectile.transform.position = new Vector3(transform.position.x, transform.position.y + shotBufferY, transform.position.z);
+        projectile.transform.forward = transform.forward;
+        ProjectileScript bullet = projectile.GetComponent<ProjectileScript>();
+        //bullet.target = target;
+        bullet.speed = shootingSpeed;
+        Instantiate(projectile);
+        
         shooting = false; 
     }
 
