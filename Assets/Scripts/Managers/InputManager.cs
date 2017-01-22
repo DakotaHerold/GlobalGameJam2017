@@ -34,6 +34,7 @@ public class InputManager : MonoBehaviour {
     {
         if (Input.GetButtonDown("Swing1"))
         {
+            //Debug.Log("test");
             //GameManager.gmInstance.cameraShaker.ShakeCamera(0.0001f, 0.01f);
         }
 

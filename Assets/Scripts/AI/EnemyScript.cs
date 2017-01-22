@@ -57,7 +57,12 @@ public class EnemyScript : MonoBehaviour {
     {
         // TO DO play death anim 
         agent = null; 
-        DestroyObject(transform.gameObject); 
+        if(GameManager.gmInstance.enemies.Contains(this.gameObject))
+        {
+            GameManager.gmInstance.enemies.Remove(this.gameObject); 
+        }
+        
+        DestroyObject(gameObject); 
     }
     
     // Getters 
@@ -90,6 +95,6 @@ public class EnemyScript : MonoBehaviour {
         {
             Debug.Log(gameObject.name + " couldn't find a closest player in scene!"); 
         }
-        Debug.Log("Closest player set for " + gameObject.name);
+        //Debug.Log("Closest player set for " + gameObject.name);
     }
 }

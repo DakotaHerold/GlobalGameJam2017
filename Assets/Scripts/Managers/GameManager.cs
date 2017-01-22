@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour {
     public float spawnInterval;
     public int numEnemies;
 
-    private List<EnemyScript> enemies = new List<EnemyScript>();
+    public List<GameObject> enemies = new List<GameObject>(); 
     private List<Transform> enemySpawnPoints = new List<Transform>();
     private List<Transform> usedSpawnPoints = new List<Transform>(); 
     private List<Transform> spawnedEnemies = new List<Transform>(); 
@@ -95,14 +95,14 @@ public class GameManager : MonoBehaviour {
         //Debug.Log("Camera targets: " + cameraController.cameraTargets.Count);
         
         // Check if all enemies have been killed 
-        for (int i = enemies.Count - 1; i >= 0; i--)
-        {
-            if(enemies[i].isDead)
-            {
-                GameObject objToDestroy = enemies[i].gameObject;
-                //enemies.RemoveAt(i); 
-            }
-        }
+        //for (int i = enemies.Count - 1; i >= 0; i--)
+        //{
+        //    if(enemies[i].isDead)
+        //    {
+        //        GameObject objToDestroy = enemies[i].gameObject;
+        //        //enemies.RemoveAt(i); 
+        //    }
+        //}
 
         if(enemies.Count > 0)
         {
@@ -112,9 +112,6 @@ public class GameManager : MonoBehaviour {
         {
             shouldSpawn = true; 
         }
-
-        // FIX ME IM NOT DECREMENTING CORRECTLY 
-        //Debug.Log("Num enemies: " + enemies.Count);
 
         // Enemies 
         if (spawnTimer > spawnInterval && shouldSpawn)
@@ -175,10 +172,8 @@ public class GameManager : MonoBehaviour {
             enemyAI.SetClosestPlayerToTarget(); 
         }
 
-        // Add enemy to enemies list 
-        enemies.Add(enemyAI); 
         // Spawn 
-        Instantiate(enemyObjectPrefabs[enemyTypeIndex]);
+        enemies.Add(Instantiate(enemyObjectPrefabs[enemyTypeIndex]));
 
         // Clean up 
         usedSpawnPoints.Add(enemySpawnPoints[spawnPointIndex]);
