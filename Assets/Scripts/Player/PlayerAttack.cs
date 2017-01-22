@@ -12,26 +12,16 @@ public class PlayerAttack : MonoBehaviour {
     public bool comboEnd;
     public bool specialActive;
     public GameObject waveProjectilePrefab;
-    bool isHit;
 
-    Animator animator;
 
     private int playerNumber;
-    private string swingButton;
-    private string specialButton;
     private PlayerScript m_playerScript; 
     // Use this for initialization
     void Start () {
         isAttacking = false;
-        isHit = false;
         comboEnd = false;
         specialActive = false;
-        playerNumber = GetComponent<CharacterController3D>().playerNumber; 
-
-        swingButton = "Swing" + playerNumber;
-        specialButton = "Special" + playerNumber;
-        //Debug.Log(swingButton);
-        animator = GetComponent<Animator>();
+        playerNumber = GetComponent<CharacterController3D>().playerNumber;
 
         m_playerScript = GetComponent<PlayerScript>(); 
     }

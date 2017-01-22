@@ -15,11 +15,14 @@ public class PlayerScript : MonoBehaviour {
     public float speed;
     public float throwingSpeed;
     public float immunity;
+    public float blinkTimer;
+    public int blink;
     public int tears;
     public bool regainHealth;
     public bool isDead;
     public bool hasWeapon;
     public bool isPinging;
+    public bool isHit;
 
     [HideInInspector]
     public CharacterController3D controller; 
@@ -34,6 +37,7 @@ public class PlayerScript : MonoBehaviour {
         isDead = false;
         hasWeapon = false;
         isPinging = false;
+        isHit = false;
         controller = GetComponent<CharacterController3D>(); 
 
         anim = GetComponent<Animator>();
@@ -45,6 +49,18 @@ public class PlayerScript : MonoBehaviour {
     {
         Death();
         HealthReGen();
+        /*
+        if (isHit)
+        {
+            Blink();
+            if(blink == 3)
+            {
+                isHit = false;
+                blink = 0;
+                blinkTimer = 1.0f;
+            }
+
+        }*/
         if(immunity > 0.0f)
         {
             immunity -= 0.01f;
@@ -115,5 +131,22 @@ public class PlayerScript : MonoBehaviour {
                 Destroy(other.gameObject);
             }
         }
+    }
+    void Blink()
+    {
+        if (blinkTimer <= 0.0f)
+        {
+            if (GetComponent<Renderer>().enabled == true)
+            {
+                GetComponent<Renderer>().enabled = false;
+            }
+            else
+            {
+                GetComponent<Renderer>().enabled = true;
+                blink += 1;
+            }
+            blinkTimer = 1.0f;
+        }
+        blinkTimer -= 0.1f;
     }
 }
