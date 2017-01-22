@@ -69,12 +69,13 @@ public class PlayerScript : MonoBehaviour {
 	}
     public void TakeDamage(float damg)
     {
+
         if (immunity <= 0.0f)
         {
             health -= damg;
             immunity = 0.5f;
         }
-        
+        Debug.Log("Health: " + health);
     }
     IEnumerator healthRegen()
     {
@@ -99,7 +100,7 @@ public class PlayerScript : MonoBehaviour {
         if (health <= 0)
         {
             isDead = true;
-            Debug.Log("Is Deads");
+            Destroy(gameObject);
         }
         if(isDead == true)
         {

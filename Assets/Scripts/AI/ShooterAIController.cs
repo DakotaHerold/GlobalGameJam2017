@@ -15,6 +15,10 @@ public class ShooterAIController : EnemyScript {
     public float amplitudeY;
     public float omegaY;
 
+    private float damageTimer = 0.0f;
+    private PlayerScript player;
+
+    private bool attacking = false; 
 
     // Use this for initialization
     new void Start()
@@ -44,8 +48,16 @@ public class ShooterAIController : EnemyScript {
 
         if (!shooting)
         {
+            damageTimer += Time.deltaTime;
+
             // translate towards target 
             agent.SetDestination(target.position);
+
+            if (damageTimer >= 1.0f && attacking == true)
+            {
+                
+                DealDamageMelee();
+            }
         }
         
         
@@ -76,4 +88,47 @@ public class ShooterAIController : EnemyScript {
     {
         target = newTarget.transform;
     }
+
+    void DealDamageMelee()
+    {
+        damageTimer = 0.0f;
+        // Asserts player is not null
+        if (player != null)
+        {
+            player.isHit = true;
+            player.TakeDamage(damage);
+
+            Debug.Log("Player taking damage");
+        }
+
+    }
+
+    // Trigger functions 
+    void OnTriggerEnter(Collider other)
+    {
+        GameObject collidedObject = other.gameObject;
+
+        player = collidedObject.GetComponent<PlayerScript>();
+        if (player != null)
+        {
+            attacking = true;
+        }
+
+
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        GameObject collidedObject = other.gameObject;
+
+        player = collidedObject.GetComponent<PlayerScript>();
+        if (player != null)
+        {
+            attacking = false;
+            player = null;
+            //
+        }
+    }
+
+
 }

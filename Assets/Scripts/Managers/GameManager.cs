@@ -27,7 +27,9 @@ public class GameManager : MonoBehaviour {
     [HideInInspector]
     public CameraControl cameraController;
     //[HideInInspector]
-    public CameraRumble cameraShaker; 
+    public CameraRumble cameraShaker;
+
+    public MenuManager mm = new MenuManager(); 
 
 	// Use this for initialization
 	void Start () {
@@ -66,6 +68,7 @@ public class GameManager : MonoBehaviour {
         if(players.Count < 1)
         {
             // TO-DO Game over logic here 
+            mm.LoadMainMenu(); 
             return; 
         }
         
@@ -90,10 +93,12 @@ public class GameManager : MonoBehaviour {
                 players.RemoveAt(i);
             }
         }
-        
+
+        if (Input.GetKey("escape"))
+            Application.Quit();
 
         //Debug.Log("Camera targets: " + cameraController.cameraTargets.Count);
-        
+
         // Check if all enemies have been killed 
         //for (int i = enemies.Count - 1; i >= 0; i--)
         //{
@@ -104,7 +109,7 @@ public class GameManager : MonoBehaviour {
         //    }
         //}
 
-        if(enemies.Count > 0)
+        if (enemies.Count > 0)
         {
             shouldSpawn = false; 
         }
