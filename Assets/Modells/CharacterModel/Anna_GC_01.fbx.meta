@@ -1,0 +1,237 @@
+fileFormatVersion: 2
+guid: 1d2dc77e1a12d304d95d30e67813a11e
+timeCreated: 1485080524
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Anna1
+    100002: //RootNode
+    100004: Arm
+    100006: Arm 1
+    100008: bind_Head
+    100010: bind_L_Ankle
+    100012: bind_L_Ball
+    100014: bind_L_Elbow
+    100016: bind_L_Eye_Lot
+    100018: bind_L_EyeScale
+    100020: bind_L_Hand
+    100022: bind_L_Hip
+    100024: bind_L_Index_1
+    100026: bind_L_Index_2
+    100028: bind_L_Knee
+    100030: bind_L_Little_1
+    100032: bind_L_Little_2
+    100034: bind_L_Middle_1
+    100036: bind_L_Middle_2
+    100038: bind_L_Shoulder
+    100040: bind_L_Thumb_
+    100042: bind_L_Thumb_1
+    100044: bind_L_Thumb_2
+    100046: bind_L_Toe
+    100048: bind_Neck
+    100050: bind_R_Ankle
+    100052: bind_R_Ball
+    100054: bind_R_Elbow
+    100056: bind_R_Eye_Rot
+    100058: bind_R_EyeScale
+    100060: bind_R_Hand
+    100062: bind_R_Hip
+    100064: bind_R_Index_1
+    100066: bind_R_Index_2
+    100068: bind_R_Knee
+    100070: bind_R_Middle_1
+    100072: bind_R_Middle_2
+    100074: bind_R_Rittle_1
+    100076: bind_R_Rittle_2
+    100078: bind_R_Shoulder
+    100080: bind_R_Thumb_
+    100082: bind_R_Thumb_1
+    100084: bind_R_Thumb_2
+    100086: bind_R_Toe
+    100088: bind_Root
+    100090: bind_Spine_1
+    100092: bind_Spine_2
+    100094: CTRL_Global
+    100096: CTRL_Hips
+    100098: CTRL_Root
+    100100: FourHeadsSkel
+    100102: Glasses
+    100104: Hair
+    100106: Head
+    100108: Head 1
+    100110: Hood1
+    100112: joint1
+    100114: Left_Arm
+    100116: Left_Arm_Right_Hand_Hand
+    100118: Left_Leg_Leg
+    100120: Neck1
+    100122: Right_Arm
+    100124: Right_Arm_Right_Hand_Hand
+    100126: Right_Leg_Leg
+    100128: ZG_Global
+    100130: ZG_Hips
+    100132: ZG_Root
+    400000: Anna1
+    400002: //RootNode
+    400004: Arm
+    400006: Arm 1
+    400008: bind_Head
+    400010: bind_L_Ankle
+    400012: bind_L_Ball
+    400014: bind_L_Elbow
+    400016: bind_L_Eye_Lot
+    400018: bind_L_EyeScale
+    400020: bind_L_Hand
+    400022: bind_L_Hip
+    400024: bind_L_Index_1
+    400026: bind_L_Index_2
+    400028: bind_L_Knee
+    400030: bind_L_Little_1
+    400032: bind_L_Little_2
+    400034: bind_L_Middle_1
+    400036: bind_L_Middle_2
+    400038: bind_L_Shoulder
+    400040: bind_L_Thumb_
+    400042: bind_L_Thumb_1
+    400044: bind_L_Thumb_2
+    400046: bind_L_Toe
+    400048: bind_Neck
+    400050: bind_R_Ankle
+    400052: bind_R_Ball
+    400054: bind_R_Elbow
+    400056: bind_R_Eye_Rot
+    400058: bind_R_EyeScale
+    400060: bind_R_Hand
+    400062: bind_R_Hip
+    400064: bind_R_Index_1
+    400066: bind_R_Index_2
+    400068: bind_R_Knee
+    400070: bind_R_Middle_1
+    400072: bind_R_Middle_2
+    400074: bind_R_Rittle_1
+    400076: bind_R_Rittle_2
+    400078: bind_R_Shoulder
+    400080: bind_R_Thumb_
+    400082: bind_R_Thumb_1
+    400084: bind_R_Thumb_2
+    400086: bind_R_Toe
+    400088: bind_Root
+    400090: bind_Spine_1
+    400092: bind_Spine_2
+    400094: CTRL_Global
+    400096: CTRL_Hips
+    400098: CTRL_Root
+    400100: FourHeadsSkel
+    400102: Glasses
+    400104: Hair
+    400106: Head
+    400108: Head 1
+    400110: Hood1
+    400112: joint1
+    400114: Left_Arm
+    400116: Left_Arm_Right_Hand_Hand
+    400118: Left_Leg_Leg
+    400120: Neck1
+    400122: Right_Arm
+    400124: Right_Arm_Right_Hand_Hand
+    400126: Right_Leg_Leg
+    400128: ZG_Global
+    400130: ZG_Hips
+    400132: ZG_Root
+    4300000: Glasses
+    4300002: Head
+    4300004: Hair
+    4300006: Neck1
+    4300008: Arm
+    4300010: Right_Arm_Right_Hand_Hand
+    4300012: Arm
+    4300014: Left_Arm_Right_Hand_Hand
+    4300016: Left_Leg_Leg
+    4300018: Right_Leg_Leg
+    4300020: Hood1
+    7400000: Idle
+    7400002: Run
+    7400004: Idle-Hammer
+    7400006: Run-Hammer
+    7400008: Attack
+    9500000: //RootNode
+    13700000: Arm
+    13700002: Arm 1
+    13700004: Glasses
+    13700006: Hair
+    13700008: Head 1
+    13700010: Hood1
+    13700012: Left_Arm_Right_Hand_Hand
+    13700014: Left_Leg_Leg
+    13700016: Neck1
+    13700018: Right_Arm_Right_Hand_Hand
+    13700020: Right_Leg_Leg
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 10
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 0
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

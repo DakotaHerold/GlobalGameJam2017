@@ -12,7 +12,6 @@ public class CharacterController3D : MonoBehaviour {
     //Rigidbody rigidBody;
     private CharacterController controller;
     private Vector3 moveDirection = Vector3.zero;
-    private string horizontalMovementAxis;
     private string verticalMovementAxis1;
     private string verticalMovementAxis2;
     private string triggerAxis;
@@ -30,8 +29,6 @@ public class CharacterController3D : MonoBehaviour {
     void Start () {
         controller = GetComponent<CharacterController>();
         //rigidBody = GetComponent<Rigidbody>();
-
-        horizontalMovementAxis = "Horizontal" + playerNumber;
         verticalMovementAxis1 = "VerticalA" + playerNumber;
         verticalMovementAxis2 = "VerticalB" + playerNumber;
         triggerAxis = "Wave" + playerNumber;
@@ -46,9 +43,6 @@ public class CharacterController3D : MonoBehaviour {
         // Apply translation 
         if (controller.isGrounded)
         {
-            Debug.Log("Axis: " + Input.GetAxis(verticalMovementAxis1));
-            Debug.Log("Foward: " + transform.forward);
-
             if (Input.GetAxis(verticalMovementAxis1) != 0 || Input.GetAxis(verticalMovementAxis2) != 0)
             {
                 transform.forward = new Vector3(-Input.GetAxis(verticalMovementAxis2), transform.forward.y, Input.GetAxis(verticalMovementAxis1));
