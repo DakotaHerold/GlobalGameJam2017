@@ -45,11 +45,13 @@ public class EnemyScript : MonoBehaviour {
     }
     public virtual void TakeDamage(float damg)
     {
+        //Debug.Log("Health before " + health);
         health -= damg;
         if(health <= 0)
         {
             isDead = true; 
         }
+        //Debug.Log("After: " + health); 
     }
     public virtual void Death()
     {

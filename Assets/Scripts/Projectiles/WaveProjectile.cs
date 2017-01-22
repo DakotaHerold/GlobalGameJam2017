@@ -6,7 +6,8 @@ public class WaveProjectile : MonoBehaviour {
 
     public float lifeSpan;
     public float rotationSpeed;
-    public float moveSpeed; 
+    public float moveSpeed;
+    public float damage; 
 
     PlayerScript controllingPlayer;
     CharacterController3D controller;
@@ -37,5 +38,20 @@ public class WaveProjectile : MonoBehaviour {
         Vector3 targetVelocity = transform.forward.normalized * moveSpeed;
         targetVelocity.y = 0;
         body.velocity = targetVelocity;
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        GameObject obj = other.gameObject; 
+        if(obj.tag == "wall")
+        {
+            Destroy(gameObject); 
+        }
+        else if (obj.tag == "enemy")
+        {
+            EnemyScript enemy = obj.GetComponent<EnemyScript>();
+            enemy.TakeDamage(damage);
+            DestroyObject(gameObject); 
+        }
     }
 }
