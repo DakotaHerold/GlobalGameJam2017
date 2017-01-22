@@ -30,6 +30,14 @@ public class CameraShake : MonoBehaviour {
         if (debugMode) ShakeCamera();
     }
 
+    void Update()
+    {
+        if(Input.GetButtonDown("Swing1"))
+        {
+            ShakeCamera(); 
+        }
+    }
+
 
     void ShakeCamera()
     {
@@ -74,6 +82,6 @@ public class CameraShake : MonoBehaviour {
         }
         transform.localRotation = Quaternion.identity;//Set the local rotation to 0 when done, just to get rid of any fudging stuff.
         isRunning = false;
-        //Debug.Log("is running set to false"); 
+        Debug.Log("is running set to false"); 
     }
 }
