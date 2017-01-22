@@ -63,11 +63,13 @@ public class CameraControl : MonoBehaviour
         for (int i = cameraTargets.Count - 1; i >= 0; i--)
         {
             // If the target isn't active, go on to the next one 
-            if (!cameraTargets[i].gameObject.activeSelf)
+            if (cameraTargets[i].gameObject != null)
             {
-                continue;
+                if (!cameraTargets[i].gameObject.activeSelf)
+                {
+                    continue;
+                }
             }
-
 
             // Add to the average and increment the number of targets in the average.
             averagePos += cameraTargets[i].position;
