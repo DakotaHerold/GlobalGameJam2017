@@ -53,6 +53,7 @@ public class PlayerAttack : MonoBehaviour {
             waveProjectilePrefab.transform.position = new Vector3(stickPlayer.transform.position.x, stickPlayer.transform.position.y + 2.0f, stickPlayer.transform.position.z);
             waveProjectilePrefab.transform.forward = transform.forward; 
             GameObject wave = Instantiate(waveProjectilePrefab);
+            wave.GetComponent<WaveProjectile>().playerNum = playerNumber;
         }
     }
 

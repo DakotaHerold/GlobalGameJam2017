@@ -7,18 +7,23 @@ public class WaveProjectile : MonoBehaviour {
     public float lifeSpan;
     public float rotationSpeed;
     public float moveSpeed;
-    public float damage; 
+    public float damage;
+    public int playerNum;
+
+    private string horizontalMovementAxis;
 
     PlayerScript controllingPlayer;
     CharacterController3D controller;
     private float timer = 0.0f;
-    private Rigidbody body; 
-
+    private Rigidbody body;
+    
 	// Use this for initialization
 	void Start () {
         controllingPlayer = GameManager.gmInstance.GetWavePlayer();
         controller = controllingPlayer.controller;
-        body = GetComponent<Rigidbody>(); 
+        body = GetComponent<Rigidbody>();
+
+        horizontalMovementAxis = "Horizontal" + playerNum;
     }
 	
 	// Update is called once per frame
@@ -32,7 +37,7 @@ public class WaveProjectile : MonoBehaviour {
         }
 
         // Apply rotation 
-        transform.Rotate(0, controller.GetTriggerAxisValue() * rotationSpeed, 0);
+        transform.Rotate(0, Input.GetAxis(horizontalMovementAxis) * rotationSpeed, 0);
 
 
         Vector3 targetVelocity = transform.forward.normalized * moveSpeed;
