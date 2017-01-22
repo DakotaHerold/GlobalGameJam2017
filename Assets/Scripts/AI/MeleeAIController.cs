@@ -33,7 +33,10 @@ public class MeleeAIController : EnemyScript {
 
         // Seek player if agent exists
         if (agent == null)
-            return; 
+            return;
+
+
+        
 
         agent.SetDestination(target.position);
         
