@@ -114,7 +114,7 @@ public class InputManager : MonoBehaviour {
         {
             // TO-DO find out how to call this at the end of animation 
             //GameManager.gmInstance.cameraShaker.ShakeCamera();
-            Debug.Log("attack!");
+            //Debug.Log("attack!");
             paScript.combo += 1;
             paScript.attackTimer = paScript.attackDelay;
             paScript.isAttacking = true;
