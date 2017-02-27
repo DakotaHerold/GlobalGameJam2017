@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class MeleeAIController : EnemyScript {
 
     public float damageInterval;
-    
+    private AudioSource audio; 
 
     [HideInInspector]
     public bool attacking = false;
@@ -20,8 +20,8 @@ public class MeleeAIController : EnemyScript {
     // Use this for initialization
     new void Start()
     {
-        base.Start(); 
-
+        base.Start();
+        audio = GetComponent<AudioSource>(); 
     }
 
     // Update is called once per frame
@@ -34,25 +34,26 @@ public class MeleeAIController : EnemyScript {
         damageTimer += Time.deltaTime;
 
         // Seek player if agent exists
-        if (agent == null)
-            return;
-
-
-        
-
-        agent.SetDestination(target.position);
-        base.anim.SetBool("IsMoving", true);
-
-
-
-        if (damageTimer >= damageInterval && attacking == true)
+        if (agent != null)
         {
-            base.anim.SetBool("IsAttacking", true);
-            DealDamage(); 
-        }
-        else
-        {
-            //base.anim.SetBool("IsAttacking", false);
+            if (target == null)
+            {
+                SetClosestPlayerToTarget();
+                return;
+            }
+
+            agent.SetDestination(target.position);
+            //base.anim.SetBool("IsMoving", true);
+
+            if (damageTimer >= damageInterval && attacking == true)
+            {
+                base.anim.SetBool("IsAttacking", true);
+                DealDamage();
+            }
+            else
+            {
+                //base.anim.SetBool("IsAttacking", false);
+            }
         }
         
     }
@@ -60,6 +61,14 @@ public class MeleeAIController : EnemyScript {
     new void Death()
     {
         base.Death(); 
+    }
+
+    public override void TakeDamage(float damg)
+    {
+        base.TakeDamage(damg);
+
+        audio.PlayOneShot(audio.clip, 1.0f);
+        
     }
 
     // Trigger functions 

@@ -14,7 +14,7 @@ public class MenuManager : MonoBehaviour {
     bool creditbool = false;
     bool overbool = false;
     float prev = 0;
-    int curr = 0;
+    //int curr = 0;
 
 	// Use this for initialization
 	void Start () {

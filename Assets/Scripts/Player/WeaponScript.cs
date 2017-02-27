@@ -8,9 +8,15 @@ public class WeaponScript : MonoBehaviour
     // Use this for initialization
     public GameObject player;
     public float spinSpeed;
-    public AudioClip hitSound; 
+    //public AudioClip hitSound; 
+    private PlayerAttack pAttack;
 
-	
+
+    void Start()
+    {
+        pAttack = this.GetComponentInParent<PlayerAttack>(); 
+    }
+
 	// Update is called once per frame
 	void Update ()
     {
@@ -20,36 +26,36 @@ public class WeaponScript : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        //audioSource.Play();
         if(collision.gameObject.tag == "enemy" && transform.parent != null)
         {
-            gameObject.GetComponent<AudioSource>().clip = hitSound;
-            gameObject.GetComponent<AudioSource>().Play();
+            //Debug.Log(collision.gameObject.tag);
+            //gameObject.GetComponent<AudioSource>().clip = hitSound;
+
             //Debug.Log("Enemy Hit!"); 
             //GameManager.gmInstance.cameraShaker.ShakeCamera();
-            if (this.GetComponentInParent<PlayerAttack>().combo == 0)
+            if (pAttack.combo == 0)
             {
                 
-                Debug.Log("Playing sound");  
+
                 collision.gameObject.GetComponent<EnemyScript>().contact = 0;
                 //other.GetComponent<Renderer>().material.color = other.GetComponent<EnemyScript>().GetCurrentColor();
             }
             //Debug.Log("Collision");
             //if (this.GetComponentInParent<PlayerAttack>().isAttacking == true && other.GetComponent<EnemyScript>().contact != this.GetComponentInParent<PlayerAttack>().combo)
-            if (this.GetComponentInParent<PlayerAttack>().isAttacking == true)
+            if (pAttack.isAttacking == true)
             {
                 Debug.Log("Hit!");
-                collision.gameObject.GetComponent<Renderer>().material.color = Color.green;
+                
                 collision.gameObject.GetComponent<EnemyScript>().TakeDamage(player.GetComponent<PlayerAttack>().attDamage);
                 collision.gameObject.GetComponent<EnemyScript>().contact = player.GetComponent<PlayerAttack>().combo;
+                EnemyScript e = collision.gameObject.GetComponent<EnemyScript>();
+                e.StartFlasher(); 
             }
-            else
-            {
-                collision.gameObject.GetComponent<Renderer>().material.color = collision.gameObject.GetComponent<EnemyScript>().GetCurrentColor();
-            }
-            EnemyScript e = collision.gameObject.GetComponent<EnemyScript>(); 
-            Debug.Log("Enemy Health " +  e.health);
         }
     }
+
+    
 
     
     void KnockBack(GameObject obj)

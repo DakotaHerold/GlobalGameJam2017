@@ -97,14 +97,33 @@ public class PlayerScript : MonoBehaviour {
 
     void Death()
     {
+       
         if (health <= 0)
         {
             isDead = true;
+            //Destroy(gameObject);
+            GameManager.gmInstance.cameraController.cameraTargets.Remove(gameObject.transform);
+            GameManager.gmInstance.players.Remove(this);
+
+            if (hasWeapon)
+            {
+                stickHold.transform.GetChild(0).gameObject.SetActive(false);
+                anim.SetBool("HasWeapon", false);
+                GameObject stickClone = Instantiate(StickPrefab, stickSpawn.transform.position, stickSpawn.transform.rotation) as GameObject;
+                Rigidbody stickPhysics = stickClone.GetComponent<Rigidbody>(); 
+
+                Vector3 targetVelocity = (transform.forward + transform.up).normalized * throwingSpeed;
+                stickPhysics.velocity = targetVelocity;
+                hasWeapon = false;
+            }
+
             Destroy(gameObject);
         }
         if(isDead == true)
         {
             healthGen = 0;
+           
+
         }
     }
 

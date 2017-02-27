@@ -9,6 +9,7 @@ public class EnemyScript : MonoBehaviour {
     public float damage;
     public float speed = 1.0f;
     public float angularSpeed = 0.0f;
+    public float stoppingDistance = 0.0f; 
     public int tears;
     public bool isDead;
     public Transform target;
@@ -20,6 +21,7 @@ public class EnemyScript : MonoBehaviour {
 
 
     private Color currentColor;
+    private bool routineActive = false;
     public NavMeshAgent agent;
 
     public virtual void Start()
@@ -31,6 +33,9 @@ public class EnemyScript : MonoBehaviour {
 
         anim = GetComponent<Animator>();
 
+        //agent.stoppingDistance = 1.0f;  
+
+
         agent.speed = speed;
         if (angularSpeed == 0.0f)
         {
@@ -41,37 +46,76 @@ public class EnemyScript : MonoBehaviour {
     // Update is called once per frame
     public virtual void Update()
     {
-        // Rotate towards target
-        Vector3 targetDir = target.position - transform.position;
-        float step = angularSpeed * Time.deltaTime;
-        Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0f);
-        //Debug.DrawRay(transform.position, newDir, Color.red);
-        transform.rotation = Quaternion.LookRotation(newDir);
-
-        //Death(); 
         if (isDead)
         {
-            anim.SetBool("IsDead", true);
-            Death(); 
+            if (anim != null)
+            {
+                anim.SetBool("IsDead", true);
+            }
+            Death();
         }
+        else
+        {
+
+            if (target == null)
+            {
+                SetClosestPlayerToTarget();
+                return;
+            }
+
+            float currentDist = Vector3.Distance(target.transform.position, transform.position);
+            //Debug.Log(currentDist);
+            if (currentDist < stoppingDistance)
+            {
+                if (anim != null)
+                { anim.SetBool("IsMoving", false); }
+                agent.Stop();
+            }
+            else
+            {
+                if (anim != null)
+                {
+                    anim.SetBool("IsMoving", true);
+                }
+                agent.Resume();
+            }
+
+            // Rotate towards target
+            Vector3 targetDir = target.position - transform.position;
+            float step = angularSpeed * Time.deltaTime;
+            Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0f);
+            //Debug.DrawRay(transform.position, newDir, Color.red);
+            transform.rotation = Quaternion.LookRotation(newDir);
+
+            //Death(); 
+        }
+        
     }
     public virtual void TakeDamage(float damg)
     {
-        Debug.Log("Health before " + health);
-        anim.SetBool("GotHit", true);
+        //Debug.Log("Health before " + health);
+        if (anim != null)
+        {
+            anim.SetBool("GotHit", true);
+        }
         health -= damg;
         if(health <= 0)
         {
             isDead = true; 
         }
-        Debug.Log("After: " + health);
+        //Debug.Log("After: " + health);
 
-        gameObject.GetComponent<Animator>().Play("Hit");
+        //gameObject.GetComponent<Animator>().Play("Hit");
+        if(anim != null)
+        {
+            anim.Play("Hit");
+        }
     }
     public virtual void Death()
     {
         // TO DO play death anim 
-        gameObject.GetComponent<Animator>().Play("Death");
+        if (anim != null)
+        { anim.Play("Death"); }
         agent = null; 
         if(GameManager.gmInstance.enemies.Contains(this.gameObject))
         {
@@ -85,6 +129,14 @@ public class EnemyScript : MonoBehaviour {
     public Color GetCurrentColor()
     {
         return currentColor; 
+    }
+
+    public void StartFlasher()
+    {
+        if (!isDead && this != null)
+        {
+            StartCoroutine(Flash());
+        }
     }
 
     public void SetClosestPlayerToTarget()
@@ -112,5 +164,14 @@ public class EnemyScript : MonoBehaviour {
             Debug.Log(gameObject.name + " couldn't find a closest player in scene!"); 
         }
         //Debug.Log("Closest player set for " + gameObject.name);
+    }
+
+    IEnumerator Flash()
+    {
+        routineActive = true;
+        GetComponent<Renderer>().material.color = Color.red;
+        yield return new WaitForSeconds(1);
+        GetComponent<Renderer>().material.color = GetCurrentColor();
+        routineActive = false;
     }
 }

@@ -45,7 +45,10 @@ public class GUIManager : MonoBehaviour {
         {
             brainsP2[i].enabled = false;
         }
-        for (int i = 0; i <= totalPlayers[0].GetComponent<PlayerScript>().health + 2; i++)
+
+        if (totalPlayers[0] != null)
+        {
+            for (int i = 0; i <= totalPlayers[0].GetComponent<PlayerScript>().health + 2; i++)
             {
                 if (i == 6)
                 {
@@ -61,23 +64,27 @@ public class GUIManager : MonoBehaviour {
                 brainsP1[strafe].sprite = brainParts[brainSwitch];
                 brainSwitch += 1;
             }
+        }
             strafe = 0;
             brainSwitch = 0;
-        for (int i = 0; i <= totalPlayers[1].GetComponent<PlayerScript>().health + 2; i++)
+        if (totalPlayers[1] != null)
         {
-            if (i == 6)
+            for (int i = 0; i <= totalPlayers[1].GetComponent<PlayerScript>().health + 2; i++)
             {
-                strafe += 1;
-                brainSwitch = 0;
+                if (i == 6)
+                {
+                    strafe += 1;
+                    brainSwitch = 0;
+                }
+                else if (i == 3)
+                {
+                    strafe += 1;
+                    brainSwitch = 0;
+                }
+                brainsP2[strafe].enabled = true;
+                brainsP2[strafe].sprite = brainParts[brainSwitch];
+                brainSwitch += 1;
             }
-            else if (i == 3)
-            {
-                strafe += 1;
-                brainSwitch = 0;
-            }
-            brainsP2[strafe].enabled = true;
-            brainsP2[strafe].sprite = brainParts[brainSwitch];
-            brainSwitch += 1;
         }
 
     }

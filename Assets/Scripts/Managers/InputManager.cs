@@ -14,6 +14,8 @@ public class InputManager : MonoBehaviour {
     private string pingButton;
     private string swingButton;
     private string specialButton;
+
+    private AudioSource audio; 
     // Use this for initialization
     void Start () {
         psScript = GetComponent<PlayerScript>();
@@ -27,6 +29,8 @@ public class InputManager : MonoBehaviour {
         specialButton = "Special" + playerNumber;
 
         anim = GetComponent<Animator>();
+
+        audio = GetComponent<AudioSource>(); 
     }
 	
 	// Update is called once per frame
@@ -71,7 +75,7 @@ public class InputManager : MonoBehaviour {
     }
 
     //From the Player Script 
-    void ThrowStick()
+    public void ThrowStick()
     {
         if (psScript.hasWeapon == true)
         {
@@ -118,6 +122,7 @@ public class InputManager : MonoBehaviour {
             paScript.combo += 1;
             paScript.attackTimer = paScript.attackDelay;
             paScript.isAttacking = true;
+            audio.PlayDelayed(0.75f);
             anim.SetBool("IsAttacking", true);
             if (paScript.combo >= 1)
             {

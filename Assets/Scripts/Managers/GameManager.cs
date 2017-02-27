@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; 
 
 public class GameManager : MonoBehaviour {
 
@@ -20,7 +21,7 @@ public class GameManager : MonoBehaviour {
     private List<Transform> usedSpawnPoints = new List<Transform>(); 
     private List<Transform> spawnedEnemies = new List<Transform>(); 
     private GameObject[] playersObjects;
-    private List<PlayerScript> players = new List<PlayerScript>(); 
+    public List<PlayerScript> players = new List<PlayerScript>(); 
     private PlayerScript stickPlayer;
     private PlayerScript wavePlayer; 
     private float spawnTimer = 0.0f;
@@ -28,8 +29,9 @@ public class GameManager : MonoBehaviour {
     public CameraControl cameraController;
     //[HideInInspector]
     public CameraRumble cameraShaker;
+    private bool startSpawnTimer = false; 
 
-    public MenuManager mm = new MenuManager(); 
+    //public MenuManager mm = new MenuManager(); 
 
 	// Use this for initialization
 	void Start () {
@@ -60,15 +62,21 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        
 
-        spawnTimer += Time.deltaTime;
+        // Input Functions
+        if (Input.GetKey("escape"))
+            Application.Quit();
+
+
+        if (startSpawnTimer)
+        { spawnTimer += Time.deltaTime; }
+
 
         // Are any players left
         if(players.Count < 1)
         {
             // TO-DO Game over logic here 
-            mm.LoadMainMenu(); 
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name); 
             return; 
         }
         
@@ -85,17 +93,16 @@ public class GameManager : MonoBehaviour {
             }
 
             // Check if players died, if so remove them from the camera manager and destroy them 
-            if (players[i].isDead)
-            {
-                cameraController.cameraTargets.Remove(players[i].gameObject.transform);
-                Debug.Log("Cam count: " + cameraController.cameraTargets.Count);
-                GameObject objToDestroy = players[i].gameObject;
-                players.RemoveAt(i);
-            }
+            //if (players[i].isDead)
+            //{
+            //    cameraController.cameraTargets.Remove(players[i].gameObject.transform);
+            //    Debug.Log("Cam count: " + cameraController.cameraTargets.Count);
+            //    GameObject objToDestroy = players[i].gameObject;
+            //    players.RemoveAt(i);
+            //}
         }
 
-        if (Input.GetKey("escape"))
-            Application.Quit();
+        
 
         //Debug.Log("Camera targets: " + cameraController.cameraTargets.Count);
 
@@ -212,6 +219,10 @@ public class GameManager : MonoBehaviour {
     //    usedSpawnPoints.Clear(); 
     //}
 
+    public void StartSpawning()
+    {
+        startSpawnTimer = true; 
+    }
 
 
 }

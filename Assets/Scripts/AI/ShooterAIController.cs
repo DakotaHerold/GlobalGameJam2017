@@ -39,6 +39,12 @@ public class ShooterAIController : EnemyScript {
             return;
         }
 
+        if (target == null)
+        {
+            SetClosestPlayerToTarget();
+            return;
+        }
+
         // Rotate towards target
         //Vector3 targetDir = target.position - transform.position;
         //float step = angularSpeed * Time.deltaTime;
@@ -96,9 +102,7 @@ public class ShooterAIController : EnemyScript {
         if (player != null)
         {
             player.isHit = true;
-            player.TakeDamage(damage);
-
-            Debug.Log("Player taking damage");
+            player.TakeDamage(damage / 3.0f);
         }
 
     }
